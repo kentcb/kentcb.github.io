@@ -1,0 +1,20 @@
+---
+title: Archive
+assets: /assets/archive/
+---
+<section id="archive">
+	{% for post in site.posts %}
+     	{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+      	{% capture nextYear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+      	
+      	{% if year != nextYear %}
+      		{% if post.next != null %}
+      			</ul>
+      		{% endif %}
+      		<h3>{{ year }}</h3>
+      		<ul>
+      	{% endif %}
+      	
+      	<li><time>{{ post.date | date:"%d %b" }}</time> : <a href="{{ post.url }}">{{ post.title }}</a></li>
+  	{% endfor %}
+</section>

@@ -1,0 +1,43 @@
+# see http://jekyllrb.com/docs/configuration/
+
+# Dependencies
+markdown:           redcarpet
+highlighter:        pygments
+
+# Permalinks
+permalink:          /blog/:title
+
+# Setup
+title:              Kent Boogaart
+tagline:            My Sliding Window
+url:                http://www.kent-boogaart.com
+paginate:           1
+baseurl:            /
+exclude:            [ Gemfile ]
+author:
+  name:             Kent Boogaart
+  url:              http://www.kent-boogaart.com
+  email:            kent.boogaart@gmail.com
+
+# Feed vars
+name:               Kent Boogaart
+description:        Kent Boogaart's Blog
+
+# Custom vars
+version:            1.0.0
+github:
+  repo:             https://github.com/kentcb/kentcb
+
+defaults:
+  -
+    scope:
+      path:         ""          # all files
+      type:         posts       # only posts though
+    values:
+      layout:       post
+  -
+    scope:
+      path:         ""          # all files
+      type:         pages       # only pages though
+    values:
+      layout:       page
