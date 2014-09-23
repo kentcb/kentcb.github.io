@@ -10,13 +10,13 @@ permalink:          /blog/:title
 # Setup
 title:              Kent Boogaart
 tagline:            My Sliding Window
-url:                http://www.kent-boogaart.com
+url:                http://kent-boogaart.com
 paginate:           1
 baseurl:            /
 exclude:            [ Gemfile ]
 author:
   name:             Kent Boogaart
-  url:              http://www.kent-boogaart.com
+  url:              http://kent-boogaart.com
   email:            kent.boogaart@gmail.com
 
 # Feed vars
@@ -26,7 +26,7 @@ description:        Kent Boogaart's Blog
 # Custom vars
 version:            1.0.0
 github:
-  repo:             https://github.com/kentcb/kentcb
+  repo:             https://github.com/kentcb/kentcb.github.io
 
 defaults:
   -
