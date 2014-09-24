@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="512"
+   height="512"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.2 r9819"
+   sodipodi:docname="icon.svg"
+   inkscape:export-filename="/Users/kent/Repository/kentcb.github.io/icon.png"
+   inkscape:export-xdpi="14.65"
+   inkscape:export-ydpi="14.65">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7202736"
+     inkscape:cx="332.93844"
+     inkscape:cy="139.60043"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer2"
+     showgrid="false"
+     showborder="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1032"
+     inkscape:window-x="1920"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Outline">
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.96921605;stroke-opacity:1"
+       id="rect4053"
+       width="785.84326"
+       height="785.84326"
+       x="-254.23195"
+       y="-93.372749" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Icon">
+    <path
+       style="fill:#2cab56;fill-opacity:1"
+       d="m 176.14852,184.29134 -230.515074,230.51508 155.597374,0 230.51509,-230.51508 z"
+       id="rect3183"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="/Users/kent/Repository/kentcb.github.io/icon.png"
+       inkscape:export-xdpi="17.173117"
+       inkscape:export-ydpi="17.173117" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4030"
+       d="m -23.85148,184.29134 -230.51507,230.51508 155.59737,0 230.51509,-230.51508 z"
+       style="fill:#c31c29;fill-opacity:1"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="/Users/kent/Repository/kentcb.github.io/icon.png"
+       inkscape:export-xdpi="17.173117"
+       inkscape:export-ydpi="17.173117" />
+    <path
+       style="fill:#1960f8;fill-opacity:1"
+       d="m 376.14852,184.29134 -230.51507,230.51508 155.59737,0 230.51509,-230.51508 z"
+       id="path4032"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="/Users/kent/Repository/kentcb.github.io/icon.png"
+       inkscape:export-xdpi="17.173117"
+       inkscape:export-ydpi="17.173117" />
+  </g>
+</svg>
