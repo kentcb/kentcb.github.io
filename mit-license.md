@@ -1,4 +1,8 @@
-The MIT License (MIT)
+---
+title: MIT License
+assets: /assets/mit-license/
+---
+# The MIT License (MIT)
 
 Copyright (c) 2014 Kent Boogaart
 

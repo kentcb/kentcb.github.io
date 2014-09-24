@@ -1,6 +1,7 @@
 ---
 title: About
 assets: /assets/about/
+sidebar: true
 ---
 Father of two, husband of one, writer of code, drummer of drums, reader of books, pursuer of truth. Australian and British, both.
 
