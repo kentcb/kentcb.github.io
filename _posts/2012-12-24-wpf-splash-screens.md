@@ -1,4 +1,4 @@
----
+v---
 title: WPF Splash Screens
 assets: /assets/2012-12-24-wpf-splash-screens/
 tags: [ ".NET", "WPF" ]
@@ -14,7 +14,7 @@ So a splash screen's primary goal is to reassure the user that their choice of s
 
 With those points in mind, it's time to move onto specifics.
 
-## The `SplashScreen` Class
+## The SplashScreen Class
 
 WPF provides a [`SplashScreen`](http://msdn.microsoft.com/en-us/library/system.windows.splashscreen.aspx) class. It is simple by design and addresses the main goal of splash screens: immediate feedback. By virtue of forgoing the WPF stack and instead relying on [Windows Imaging Component](http://msdn.microsoft.com/en-gb/library/windows/desktop/ee719654(v=vs.85).aspx) (WIC) to display images, it provides the quickest path to getting a splash on the screen short of writing your own native bootstrapper.
 
@@ -126,13 +126,13 @@ In my case, I need to ensure the text within the splash image is right-aligned, 
 <AddTextToImage InputPath="$(ResourcesPath)/SplashTemplate.png" OutputPath="$(ResourcesPath)/Splash.png" TopRightPoint="350,115" Text="$(Version)"/>
 {% endhighlight %}
 
-This takes the *SplashTemplate.png* image, adds the contents of the Version property at the location specified, then saves it to *Splash.png*. Easy. This step, of course, happens before I build the application, so that the modified *Splash.png* is included in the executable as a resource. I also check in a copy of the splash template as *Splash.png* so that developers don't run into missing file issues if they compile without the splash generation step having been executed. I then set up my source control to ignore any changes to that file.
+This takes the *SplashTemplate.png* image, adds the contents of the `Version` property at the location specified, then saves it to *Splash.png*. Easy. This step, of course, happens before I build the application, so that the modified *Splash.png* is included in the executable as a resource. I also check in a copy of the splash template as *Splash.png* so that developers don't run into missing file issues if they compile without the splash generation step having been executed. I then set up my source control to ignore any changes to that file.
 
 I use the same technique to add version numbers to my setup images. You could take it a lot further (add other text, flexible fonts, superimpose other images), of course, but I haven't had any need.
 
 ## Postponing Closure
 
-The SplashScreen class supports an auto-close function, which will start closing the splash screen as soon as the application is loaded (ie. the dispatcher is processing messages with a priority of `DispatcherPriority.Loaded`). It also allows you to close the splash screen yourself, via its [`Close`](http://msdn.microsoft.com/en-us/library/system.windows.splashscreen.close.aspx) method.
+The `SplashScreen` class supports an auto-close function, which will start closing the splash screen as soon as the application is loaded (ie. the dispatcher is processing messages with a priority of `DispatcherPriority.Loaded`). It also allows you to close the splash screen yourself, via its [`Close`](http://msdn.microsoft.com/en-us/library/system.windows.splashscreen.close.aspx) method.
 
 In my experience, a splash screen closing as soon as the application is loaded can be a jarring experience. The application being loaded does not imply that all windows have been initialized and displayed. You may have some background process initializing services or connections or whatever, with UI initializing asynchronously in respect to that.
 
@@ -179,7 +179,7 @@ Great! Now we have a splash that closes two seconds after the application loads.
 
 Now that our splash closes some time after the application appears, another problem has surfaced. When our splash screen fades, it temporarily becomes activated. That's weird. And rather ugly.
 
-After perusing the source for `SplashScreen`, I found the reason for this jarring activation. This code is in the fade logic:
+After perusing [the source for `SplashScreen`](http://referencesource.microsoft.com/#WindowsBase/src/Base/System/Windows/SplashScreen.cs), I found the reason for this jarring activation. This code is in the fade logic:
 
 {% highlight C# %}
 // by default close gets called as soon as the first application window is created
@@ -251,7 +251,7 @@ Not ideal, but it works. We can now fade our splash screen ourselves without it 
 
 ## Taming the Z-order
 
-There's nothing more obnoxious that a splash screen that insists on covering other applications. OK, apart from [Ken Ham](http://en.wikipedia.org/wiki/Ken_Ham) that is. So when we show our splash screen, we should pass false for the topmost parameter (or don't specify the parameter at all, since false is the default value):
+There's nothing more obnoxious that a splash screen that insists on covering other applications. OK, apart from [Ken Ham](http://en.wikipedia.org/wiki/Ken_Ham) that is. So when we show our splash screen, we should pass `false` for the `topmost` parameter (or don't specify the parameter at all, since `false` is the default value):
 
 {% highlight C# %}
 splashScreen.Show(autoClose: false, topMost: false);
@@ -259,7 +259,7 @@ splashScreen.Show(autoClose: false, topMost: false);
 
 However, doing so presents another issue. Other windows within our application can obstruct the splash screen. As we discovered in the last section, this is why WPF’s `SplashScreen` calls [`SetActiveWindow`](http://msdn.microsoft.com/en-gb/library/windows/desktop/ms646311(v=vs.85).aspx). But `SetActiveWindow`‘s primary purpose is to activate a window – bringing the window to the top of the stack is just a side-effect of that. We would like to bring our splash to the top of the window stack without activating it. Moreover, we need to ensure it remains at the top of the stack regardless of how many application windows happens to come (and maybe even go) during the time the splash is on-screen or fading away.
 
-The first issue can be addressed by using [`SetWindowPos`](http://msdn.microsoft.com/en-gb/library/windows/desktop/ms633545(v=vs.85).aspx) instead of SetActiveWindow. It allows us to pull a window in our application to the top of the stack without activating it.
+The first issue can be addressed by using [`SetWindowPos`](http://msdn.microsoft.com/en-gb/library/windows/desktop/ms633545(v=vs.85).aspx) instead of `SetActiveWindow`. It allows us to pull a window in our application to the top of the stack without activating it.
 
 The second issue – ensuring our splash stays on top even as application windows come and go – is trickier. I considered many approaches, including setting the splash window to be a child of the application window (but what if there are multiple application windows?), detecting the activation of new windows so I can call `SetActiveWindow` again on the splash, and hooking into message queues.
 
