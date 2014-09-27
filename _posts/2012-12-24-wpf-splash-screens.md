@@ -1,4 +1,4 @@
-v---
+---
 title: WPF Splash Screens
 assets: /assets/2012-12-24-wpf-splash-screens/
 tags: [ ".NET", "WPF" ]
