@@ -2,7 +2,6 @@
 title: WPF Splash Screens
 assets: /assets/2012-12-24-wpf-splash-screens/
 tags: [ ".NET", "WPF" ]
-categories: [ "test" ]
 ---
 It may seem odd to blog about something as mundane as WPF splash screens. After all, it's a solved problem, right? Wrong. I think there are various problems that come about by using standard splash screen helpers, and I want to address those here.
 
