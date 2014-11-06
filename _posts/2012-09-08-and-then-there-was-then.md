@@ -3,7 +3,7 @@ title: And then there was Then
 assets: /assets/2012-09-08-and-then-there-was-then/
 tags: [ ".NET", "TPL" ]
 ---
-In his excellent post [Processing Sequences of Asynchronous Operations with Tasks](http://blogs.msdn.com/b/pfxteam/archive/2010/11/21/10094564.aspx), Stephen Toub discusses how a series of asynchronous operations can be run one after the other in a pre-.NET 4.5 world (a world in which I currently reside, both at work and at home). I won't go into the details here - you should just read his post - but suffice to say that an implementation of a set of Then extension methods is desirable as a functional equivalent to the `await` keyword. This allows us to chain together asynchronous operations with ease and with better performance than that attainable with `ContinueWith` on its own:
+In his excellent post [Processing Sequences of Asynchronous Operations with Tasks](http://blogs.msdn.com/b/pfxteam/archive/2010/11/21/10094564.aspx), Stephen Toub discusses how a series of asynchronous operations can be run one after the other in a pre-.NET 4.5 world (a world in which I currently reside, both at work and at home). I won't go into the details here - you should just read his post - but suffice to say that an implementation of a set of `Then` extension methods is desirable as a functional equivalent to the `await` keyword. This allows us to chain together asynchronous operations with ease and with better performance than that attainable with `ContinueWith` on its own:
 
 {% highlight C# %}
 DownloadImageAsync()
