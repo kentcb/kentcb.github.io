@@ -4,7 +4,7 @@ assets: /assets/2015-02-22-ugly-code-for-an-attractive-uisearchbar/
 tags: [ "C#", ".NET", "Xamarin", "iOS" ]
 ---
 
-Getting an iOS view to look exactly how you want it can super frustrating. Take, for example, the simple requirement of hosting a `UISearchBar` inside a `UITableViewCell`. Here's some code as a starting point:
+Getting an iOS view to look *exactly* how you want it can be super frustrating. Take, for example, the simple requirement of hosting a `UISearchBar` inside a `UITableViewCell`. Here's some code as a starting point:
 
 {% highlight C# %}
 namespace UISearchBarExample
@@ -15,11 +15,6 @@ namespace UISearchBarExample
 
     public class View : UITableViewController
     {
-        public View()
-        {
-            this.EdgesForExtendedLayout = UIRectEdge.None;
-        }
-
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -73,7 +68,7 @@ Obviously I'm not advocating this specific approach in a real app - I'm just get
 
 Clearly, that's pretty ugly. We really need to lose the dark rectangle behind the search bar. You'd be forgiven for thinking it a simple matter of changing a property or two on `UISearchBar`. Perhaps `BackgroundColor`? Or maybe `SearchBarStyle`?
 
-Changing the color properties (`BackgroundColor`, `BarTintColor`, `TintColor`) to `UIColor.Clear` actually makes matters worse because the background becomes solid black rather than gray. However, changing `SearchBarStyle` to `Minimal` gets us a small step forward:
+Turns out, changing the color properties (`BackgroundColor`, `BarTintColor`, `TintColor`) to `UIColor.Clear` actually makes matters worse because the background becomes solid black rather than gray. However, changing `SearchBarStyle` to `Minimal` gets us a small step forward:
 
 ![Second Attempt]({{ page.assets }}second-attempt.png "Second Attempt")
 
