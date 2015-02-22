@@ -23,6 +23,11 @@ namespace UISearchBarExample
 
         private class Source : UITableViewSource
         {
+            public override nint RowsInSection(UITableView tableview, nint section)
+            {
+                return 2;
+            }
+
             public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
             {
                 var cell = new UITableViewCell();
@@ -52,11 +57,6 @@ namespace UISearchBarExample
 
                 return cell;
             }
-
-            public override nint RowsInSection(UITableView tableview, nint section)
-            {
-                return 2;
-            }
         }
     }
 }
@@ -68,11 +68,11 @@ Obviously I'm not advocating this specific approach in a real app - I'm just get
 
 Clearly, that's pretty ugly. We really need to lose the dark rectangle behind the search bar. You'd be forgiven for thinking it a simple matter of changing a property or two on `UISearchBar`. Perhaps `BackgroundColor`? Or maybe `SearchBarStyle`?
 
-Turns out, changing the color properties (`BackgroundColor`, `BarTintColor`, `TintColor`) to `UIColor.Clear` actually makes matters worse because the background becomes solid black rather than gray. However, changing `SearchBarStyle` to `Minimal` gets us a small step forward:
+Turns out, changing the color properties (`BackgroundColor`, `BarTintColor`, `TintColor`) to `UIColor.Clear` actually makes matters *worse* because the background becomes solid black rather than gray. However, changing `SearchBarStyle` to `Minimal` gets us a small step forward:
 
 ![Second Attempt]({{ page.assets }}second-attempt.png "Second Attempt")
 
-This is slightly more attractive, though still not ideal. I'd like for the search bar to be less conspicuous still. I want to lose the gray rectangle with rounded corners.
+This is slightly more attractive, though still not ideal. I'd like for the search bar to be even less conspicuous. I want to remove the gray rectangle with rounded corners.
 
 Despite all the advice I could find to the contrary, this is simply not possible in iOS 8 (probably not in 7 either). I had to resort to some ugly code to make this happen...by digging through the visual tree to find the `UITextField` inside the `UISearchBar`, we can then make the necessary adjustments.
 
