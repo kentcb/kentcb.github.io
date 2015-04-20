@@ -13,7 +13,7 @@ tagline:            My Sliding Window
 url:                http://kent-boogaart.com
 paginate:           1
 baseurl:            /
-exclude:            [ Gemfile, icon.svg ]
+exclude:            [ Gemfile, icon.svg, CreatePost.ps1 ]
 author:
   name:             Kent Boogaart
   url:              http://kent-boogaart.com
