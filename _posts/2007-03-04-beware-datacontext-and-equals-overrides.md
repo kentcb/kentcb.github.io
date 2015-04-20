@@ -7,7 +7,7 @@ When binding to business or data objects in WPF, beware that WPF's `System.Windo
 
 If your object (or one of its ancestors) overrides `Equals()` to use something other than reference equality semantics you need to be careful when re-assigning to `DataContext`. Suppose you have this business class:
 
-{% highlight C# %}
+```C#
 public sealed class Student : INotifyPropertyChanged
 {
     private readonly int _id;
@@ -35,11 +35,11 @@ public sealed class Student : INotifyPropertyChanged
         return _id == student._id;
     }
 }
-{% endhighlight %}
+```
 
 Note in particular that the `Student` class overrides `Equals()` such that two `Student` instances are considered equal if their IDs are equal. Now suppose you have a `StudentView` user control that binds to a `Student` instance:
 
-{% highlight XML %}
+```XML
 <UserControl x:Class="BindingTest.StudentView"
     xmlns=http://schemas.microsoft.com/winfx/2006/xaml/presentation
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
@@ -54,16 +54,16 @@ Note in particular that the `Student` class overrides `Equals()` such that two `
         </StackPanel>
     </StackPanel>
 </UserControl>
-{% endhighlight %}
+```
 
 Assuming that you re-use an instance of `StudentView` instead of recreating a new one every time, you may run into situations where assigning a new `Student` to `StudentView`'s `DataContext` does not update the bindings. This will happen where the new student's ID matches the ID of the student currently bound to. In this case, you will find that the name does not update in the view even if it has changed in the underlying `Student` instance. Actually, the ID wouldn't have updated either but it hasn't changed so you won't really notice.
 
 The easiest way to fix this problem is to assign `null` to `DataContext` before assigning the new `Student`:
 
-{% highlight C# %}
+```C#
 studentView.DataContext = null;
 studentView.DataContext = someStudent;
-{% endhighlight %}
+```
 
 This will force the bindings to refresh regardless of whether the student IDs.
 

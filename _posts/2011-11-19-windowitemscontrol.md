@@ -5,7 +5,7 @@ tags: [ ".NET", "WPF" ]
 ---
 The application I'm currently working on - top secret, mum's the word, your death for my indiscretion, you get the idea - includes a widget-style interface. In order to render these widgets, I use an `ItemsControl` and bind it to a collection of view models, each of which represents a widget. I use a `Canvas` to lay them out according to their `XOffset` and `YOffset` properties. Something like this:
 
-{% highlight XML %}
+```XML
 <ItemsControl ItemsSource="{Binding Widgets}">
     <ItemsControl.ItemsPanel>
         <ItemsPanelTemplate>
@@ -24,7 +24,7 @@ The application I'm currently working on - top secret, mum's the word, your deat
         </DataTemplate>
     </ItemsControl.ItemTemplate>
 </ItemsControl>
-{% endhighlight %}
+```
 
 This all works fine and I'd even go so far as to say it's a beautiful thing. However, it is only a widget-style interface by virtue of some trickery on my part. Without said trickery, it would be more of an MDI interface.
 
@@ -36,15 +36,15 @@ No problem, you say. Just host your widgets inside windows instead and be done w
 
 But I want it to be seamless with respect to the current code base. I don't want to have to go hook up a bunch of event handlers to create/show/close windows when my widget collection changes. I don't want to have to change the way my view models keep track of widget positions and sizes (all persisted across application restarts, of course). All I want to do is change this:
 
-{% highlight XML %}
+```XML
 <ItemsControl ItemsSource="{Binding Widgets}">
-{% endhighlight %}
+```
 
 to this:
 
-{% highlight XML %}
+```XML
 <WindowItemsControl ItemsSource="{Binding Widgets}">
-{% endhighlight %}
+```
 
 But unfortunately WPF doesn't have a `WindowItemsControl`. **Boo**. And it doesn't seem as though anyone in the community has written one.
 
@@ -60,7 +60,7 @@ What I did instead was had the `WindowItemsControl` create `WindowItemsControlIt
 
 The code is actually quite neat and compact. Here is the code for `WindowItemsControl`:
 
-{% highlight C# %}
+```C#
 public class WindowItemsControl : ItemsControl
 {
     public static readonly DependencyProperty ShowDialogProperty = DependencyProperty.Register(
@@ -153,7 +153,7 @@ public class WindowItemsControl : ItemsControl
         }
     }
 }
-{% endhighlight %}
+```
 
 Pretty straightforward stuff. Note the following:
 
@@ -165,7 +165,7 @@ Pretty straightforward stuff. Note the following:
 
 The `WindowItemsControl` works in conjunction with the `WindowItemsControlItem`, which looks like this:
 
-{% highlight C# %}
+```C#
 public class WindowItemsControlItem : FrameworkElement
 {
     private readonly WindowItemsControl windowItemsControl;
@@ -240,7 +240,7 @@ public class WindowItemsControlItem : FrameworkElement
         return window;
     }
 }
-{% endhighlight %}
+```
 
 This is all pretty self-explanatory, too. The important points to note are:
 

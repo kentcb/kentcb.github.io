@@ -10,7 +10,7 @@ It's important to note that the solution I provide here isn't a like-for-like re
 
 So here's the Powershell script I concocted (obviously you'll need to tweak the `$Server` and `$PathsToBackup` properties for your setup):
 
-{% highlight PowerShell %}
+```PowerShell
 # Incrementally backs up files on a client to a server
  
 # the name of your server
@@ -39,7 +39,7 @@ foreach ($PathToBackup in $PathsToBackup)
     $Command = "robocopy $PathToBackup \\$Server\Backups\$Client\$PathQualifier\$PathToBackupWithoutQualifier /FFT /MIR /NP /W:0.5 /R:0 >> $LogPath"
     Invoke-Expression $Command
 }
-{% endhighlight %}
+```
 
 I placed this script in my home directory with a name of *Backup.ps1*.
 

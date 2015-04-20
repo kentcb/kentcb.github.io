@@ -5,7 +5,7 @@ tags: [ ".NET", "MEF" ]
 ---
 Another piece of MEF code Glenn prompted me to share is a filtered catalog. Here it is in its entirety:
 
-{% highlight C# %}
+```C#
 private abstract class FilteredCatalog : ComposablePartCatalog
 {
     private readonly ComposablePartCatalog catalogToFilter;
@@ -43,11 +43,11 @@ private abstract class FilteredCatalog : ComposablePartCatalog
         return true;
     }
 }
-{% endhighlight %}
+```
 
 The idea of this abstract class is to make it easy for you to provide filtering logic to pick and choose the parts that are of interest to you. For example, suppose you want a catalog to filter out all services:
 
-{% highlight C# %}
+```C#
 private sealed class NonServiceCatalog : FilteredCatalog
 {
     public NonServiceCatalog(ComposablePartCatalog catalogToFilter)
@@ -61,13 +61,13 @@ private sealed class NonServiceCatalog : FilteredCatalog
         return !exportDefinition.Metadata.ContainsKey("Mode");
     }
 }
-{% endhighlight %}
+```
 
 It is entirely possible that you could alter `FilteredCatalog` such that it is concrete and takes lambdas to filter out parts. However, I prefer the explicit approach because it results in clear code such as:
 
-{% highlight C# %}
+```C#
 rootCatalog.Catalogs.Add(new NonServiceCatalog(catalog));
-{% endhighlight %}
+```
 
 Well, that’s it really. A simple, but effective way of filtering your MEF parts.
 

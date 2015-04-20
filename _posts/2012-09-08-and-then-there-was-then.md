@@ -5,17 +5,17 @@ tags: [ ".NET", "TPL" ]
 ---
 In his excellent post [Processing Sequences of Asynchronous Operations with Tasks](http://blogs.msdn.com/b/pfxteam/archive/2010/11/21/10094564.aspx), Stephen Toub discusses how a series of asynchronous operations can be run one after the other in a pre-.NET 4.5 world (a world in which I currently reside, both at work and at home). I won't go into the details here - you should just read his post - but suffice to say that an implementation of a set of `Then` extension methods is desirable as a functional equivalent to the `await` keyword. This allows us to chain together asynchronous operations with ease and with better performance than that attainable with `ContinueWith` on its own:
 
-{% highlight C# %}
+```C#
 DownloadImageAsync()
     .Then(x => SearchForAliensAsync())
     .Then(x => DistributeResultsAsync());
-{% endhighlight %}
+```
 
 Stephen provides an implementation of `Then` and hints at the usefulness of further overloads. In this post, I provide my own implementation of `Then` that includes all overloads that I think are useful.
 
 Firstly, here are the signatures for my overloads of `Then`:
 
-{% highlight C# %}
+```C#
 public static Task Then(this Task antecedent, Func<Task, Task> getSuccessor)
 public static Task Then(this Task antecedent, Action<Task> successor, TaskCreationOptions taskCreationOptions = TaskCreationOptions.None, TaskScheduler scheduler = null)
  
@@ -27,7 +27,7 @@ public static Task Then<TAntecedent>(this Task<TAntecedent> antecedent, Action<T
  
 public static Task<TSuccessor> Then<TAntecedent, TSuccessor>(this Task<TAntecedent> antecedent, Func<Task<TAntecedent>, Task<TSuccessor>> getSuccessor)
 public static Task<TSuccessor> Then<TAntecedent, TSuccessor>(this Task<TAntecedent> antecedent, Func<Task<TAntecedent>, TSuccessor> successor, TaskCreationOptions taskCreationOptions = TaskCreationOptions.None, TaskScheduler scheduler = null)
-{% endhighlight %}
+```
 
 Note that due to the use of optional arguments, there are more overload permutations here than apparent at first glance. Broadly, there are four supported scenarios:
 
@@ -40,7 +40,7 @@ Each scenario comes in two "flavours". The first flavour requires that the calle
 
 Four scenarios and two flavours means eight overloads, many of which include optional arguments. The result is a great deal of flexibility in how you use `Then`:
 
-{% highlight C# %}
+```C#
 InitializeAsync()
     .Then(x => Console.WriteLine("Initialize step done."))                  // an action that is wrapped in a Task for us
     .Then(x => DownloadDataAsync())                                         // a method that returns a Task
@@ -62,11 +62,11 @@ InitializeAsync()
             }
         })
     .Then(x => Console.WriteLine("Processing step done: " + x.Result));     // another action
-{% endhighlight %}
+```
 
 Right, on to the implementation then. To improve maintainability, I really wanted to ensure I had only a single implementation of the core `Then` logic, no matter the number of overloads I made available. This presented a problem in that the core implementation would need to be generic, but then the non-generic overloads would not be able to call it (because their `Task` instances are not generic). To that end, I created a simple method that takes a non-generic `Task` and wraps it as a `Task<bool>`:
 
-{% highlight C# %}
+```C#
 public static Task<bool> ToBooleanTask(this Task task)
 {
     var taskCompletionSource = new TaskCompletionSource<bool>();
@@ -77,13 +77,13 @@ public static Task<bool> ToBooleanTask(this Task task)
  
     return taskCompletionSource.Task;
 }
-{% endhighlight %}
+```
 
 If and when the non-generic `Task` succeeds, the wrapper `Task<bool>` assumes a result of `true`. If it is cancelled or fails, that cancellation or failure propagates to the wrapper `Task<bool>` too. So now any `Task` can be treated as a `Task<bool>`, thus allowing our non-generic overloads to call into our generic core implementation.
 
 With that in place, I could create the core implementation:
 
-{% highlight C# %}
+```C#
 private static Task<TSuccessor> ThenImpl<TAntecedent, TSuccessor>(Task<TAntecedent> antecedent, Func<Task<TAntecedent>, Task<TSuccessor>> getSuccessor)
 {
     antecedent.AssertNotNull("antecedent");
@@ -143,13 +143,13 @@ private static Task<TSuccessor> ThenImpl<TAntecedent, TSuccessor>(Task<TAntecede
  
     return taskCompletionSource.Task;
 }
-{% endhighlight %}
+```
 
 This is very similar to the implementation provided on Stephen's blog, since I used his solution as a starting point.
 
 With these two pieces in place, I could add all the overloads I required:
 
-{% highlight C# %}
+```C#
 public static Task Then(this Task antecedent, Func<Task, Task> getSuccessor)
 {
     Func<Task<bool>, Task<bool>> getSuccessorAsBoolean = x =>
@@ -231,13 +231,13 @@ public static Task<TSuccessor> Then<TAntecedent, TSuccessor>(this Task<TAntecede
     };
     return ThenImpl<TAntecedent, TSuccessor>(antecedent, getSuccessor);
 }
-{% endhighlight %}
+```
 
 Each of these overloads directly calls the core `ThenImpl` implementation, massaging any parameters as necessary. It's all reasonably straightforward, so I won't elaborate too much here.
 
 In the interests of completeness, I also wrote these unit tests to validate the implementation:
 
-{% highlight C# %}
+```C#
 [Fact]
 public void to_boolean_task_propagates_failures()
 {
@@ -716,6 +716,6 @@ public void then_generic_tasks_can_change_type()
  
     Assert.True(task.Wait(TimeSpan.FromSeconds(2)));
 }
-{% endhighlight %}
+```
 
 Alright, that about wraps it up. I hope it is of use to some of you.

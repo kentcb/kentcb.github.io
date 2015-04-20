@@ -16,7 +16,7 @@ More often than not, I had just forgotten to add the appropriate metadata to my 
 
 I came up with this:
 
-{% highlight C# %}
+```C#
 private static void VerifyComposition()
 {
 #if DEBUG
@@ -36,7 +36,7 @@ private static void VerifyComposition()
     }
 #endif
 }
-{% endhighlight %}
+```
 
 This uses the `CompositionInfo` type, which is included in the *Microsoft.ComponentModel.Composition.Diagnostics* assembly. As an aside, I had to [build my own version](http://mef.codeplex.com/Thread/View.aspx?ThreadId=217035) of this assembly for use with Silverlight since there is none provided out of the box.
 

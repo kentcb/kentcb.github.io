@@ -11,17 +11,17 @@ The simplest status bar is straightforward and looks just fine:
 
 The markup for this is:
 
-{% highlight XML %}
+```XML
 <StatusBar>
     <StatusBarItem>
         <TextBlock>Ready</TextBlock>
     </StatusBarItem>
 </StatusBar>
-{% endhighlight %}
+```
 
 Now suppose you want to add a second panel (I wanted more, but I'll get to that). You might try:
 
-{% highlight XML %}
+```XML
 <StatusBar>
     <StatusBarItem>
         <TextBlock>Ready</TextBlock>
@@ -30,7 +30,7 @@ Now suppose you want to add a second panel (I wanted more, but I'll get to that)
         <TextBlock>Set</TextBlock>
     </StatusBarItem>
 </StatusBar>
-{% endhighlight %}
+```
 
 But this may not render how you were expecting:
 
@@ -38,7 +38,7 @@ But this may not render how you were expecting:
 
 Typically you would want the left-most panel to stretch. Turns out the `StatusBarItem`s are hosted in a `DockPanel`, so you can do this just by setting the `Dock` property on the right panel:
 
-{% highlight XML %}
+```XML
 <StatusBar>
     <StatusBarItem DockPanel.Dock="Right">
         <TextBlock>Set</TextBlock>
@@ -47,7 +47,7 @@ Typically you would want the left-most panel to stretch. Turns out the `StatusBa
         <TextBlock>Ready</TextBlock>
     </StatusBarItem>
 </StatusBar>
-{% endhighlight %}
+```
 
 ![Dual Docked Status Bar]({{ page.assets }}dual_docked_status_bar.png "Dual Docked Status Bar")
 
@@ -59,7 +59,7 @@ We need more control over how the `StatusBarItem`s are arranged. The key to this
 
 For the ultimate control, I opted to use a `Grid`, WPF's swiss army knife panel. For example:
 
-{% highlight XML %}
+```XML
 <StatusBar>
     <StatusBar.ItemsPanel>
         <ItemsPanelTemplate>
@@ -89,7 +89,7 @@ For the ultimate control, I opted to use a `Grid`, WPF's swiss army knife panel.
         <TextBlock>Go!</TextBlock>
     </StatusBarItem>
 </StatusBar>
-{% endhighlight %}
+```
 
 With this markup we get:
 

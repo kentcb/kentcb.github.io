@@ -17,7 +17,7 @@ Fortunately, the Visual State Manager infrastructure is extensible in that it al
 
 Enter, the `MinimumTimeVisualStateManager`:
 
-{% highlight C# %}
+```C#
 public class MinimumTimeVisualStateManager : VisualStateManager
 {
     public static readonly DependencyProperty MinimumTimeProperty = DependencyProperty.RegisterAttached("MinimumTime",
@@ -103,13 +103,13 @@ public class MinimumTimeVisualStateManager : VisualStateManager
         return succeeded;
     }
 }
-{% endhighlight %}
+```
 
 By way of explanation, the `MinimumTimeVisualStateManager` uses an attached property called `MinimumTime` which can be set on `VisualState` instances. When set, any calls to `GoToStateCore` will ensure that the required minimum time has been surpassed. If so, the state change succeeds as per normal. If not, a `DispatcherTimer` is used to switch states at an appropriate point later in time.
 
 With this custom visual state manager, we can impose minimum times for states like this:
 
-{% highlight XML %}
+```XML
 <Grid x:Name="root">
     <VisualStateManager.CustomVisualStateManager>
         <kb:MinimumTimeVisualStateManager/>
@@ -119,7 +119,7 @@ With this custom visual state manager, we can impose minimum times for states li
         <VisualStateGroup Name="LoadStates">
             <VisualState Name="Loading" kb:MinimumTimeVisualStateManager.MinimumTime="00:00:01">
             ...
-{% endhighlight %}
+```
 
 In the above example, we ensure that the *Loading* state is active for at least 1 second.
 

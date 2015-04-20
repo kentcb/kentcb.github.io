@@ -14,7 +14,7 @@ To imbue Silverlight with the WPF goodness that is relative `Popup` placement, I
 
 Usage looks like this:
 
-{% highlight XML %}
+```XML
 <Popup b:PopupPlacement.PlacementTarget="{Binding ElementName=someElement}">
     <b:Popup.PreferredOrientations>
         <b:PopupOrientationCollection>
@@ -27,7 +27,7 @@ Usage looks like this:
  
     <TextBlock>My popup's contents</TextBlock>
 </Popup>
-{% endhighlight %}
+```
 
 The above will attempt to position the `Popup` centred above `someElement`. Failing that, it will attempt to place it centered below `someElement`. Failing that, it will attempt to place it with its top centred to the right of `someElement`. Failing that, it will cycle through all other possible permutations of orientations and choose the first one that fits. Failing that, it will resort to just displaying the `Popup` with your most desired orientation, even though the `Popup` doesn’t fit.
 

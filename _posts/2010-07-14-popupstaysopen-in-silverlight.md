@@ -7,11 +7,11 @@ Continuing on with the theme of restoring some WPF goodness to Silverlight, here
 
 Usage looks like this:
 
-{% highlight XML %}
+```XML
 <Popup b:Popup.StaysOpen="False">
     <TextBlock>Popup contents</TextBlock>
 </Popup>
-{% endhighlight %}
+```
 
 The only limitations I know of are:
 

@@ -22,7 +22,7 @@ The second point is more relevant, since the primary job of a view model is to p
 
 Suppose you have two view models that are related. For example, a `ParentViewModel` and `ChildViewModel`. Let’s say that the `ChildViewModel` has a reference to a `ParentViewModel`. When the `Savings` property on the `ParentViewModel` changes, we want to update the `Inheritance` property on the `ChildViewModel`. Using `DependencyObject`s as view models, we can simply use data binding to achieve this:
 
-{% highlight C# %}
+```C#
 //this code is in the ChildViewModel constructor
 var binding = new Binding("Savings") { Source = parent};
 BindingOperations.SetBinding(this, ChildViewModel.InheritanceProperty, binding);Using POCOs we need to do a little more work. Typically your POCO view models will implement INotifyPropertyChanged, so the code would look more like this: 
@@ -35,7 +35,7 @@ parent.PropertyChanged += delegate(object sender, PropertyChangedEventArgs e)
         Inheritance = parent.Savings;
     }
 };
-{% endhighlight %}
+```
 
 Neither of these options is particularly appealing to me, but the binding approach with `DependencyObject`s is more flexible and less typing. Both suffer from magic strings (`"Savings"`, in this case).
 
@@ -43,7 +43,7 @@ Neither of these options is particularly appealing to me, but the binding approa
 
 Sometimes you will want to serialize your view model. For example, you might want to implement the `IEditableObject` interface so that changes to your view model can be rolled back. An easy way to do this is to serialize a snapshot of your view model and then roll back if necessary:
 
-{% highlight C# %}
+```C#
 [Serializable]
 public class MyViewModel : IEditableObject
 {
@@ -79,7 +79,7 @@ public class MyViewModel : IEditableObject
         _copy = null;
     }
 }
-{% endhighlight %}
+```
 
 This works fine for POCO view models, but not so for `DependencyObject`s. Recall that for an object to be serializable (and I'm talking strictly about `IFormatter`-based serialization here), it and all its subclasses must be marked with the `Serializable` attribute.
 
@@ -107,7 +107,7 @@ Of course, if your view model is a POCO, it won't suffer from this problem. You'
 
 One of the responsibilities your view models will typically take on is that of doing heavy work on a background thread. For example, suppose you have a refresh button in your UI that causes a heap of widget data to be loaded from the database and displayed in a list. You'd hardly want the UI to hang while the database access is taking place, so you decide to put the work in a background thread:
 
-{% highlight C# %}
+```C#
 public class MyViewModel
 {
     //this gets called when the user clicks the refresh button - we'll worry about how that happens in a later post
@@ -134,7 +134,7 @@ public class MyViewModel
         });
     }
 }
-{% endhighlight %}
+```
 
 All we're doing here is doing as much work on a background thread as we can. Only at the last step do we switch to the UI thread to update the collection that the UI thread is bound to (and with the right infrastructure, even that would be optional).
 

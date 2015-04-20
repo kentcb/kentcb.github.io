@@ -7,7 +7,7 @@ If you've ever put together a custom theme for WPF, you'll know the value of com
 
 Suppose you're implementing a style for buttons. It looks like this:
 
-{% highlight XML %}
+```XML
 <Style TargetType="Button">
     <Setter Property="Background">
         <Setter.Value>
@@ -24,34 +24,34 @@ Suppose you're implementing a style for buttons. It looks like this:
     <Setter Property="FontSize" Value="12pt"/>
     <Setter Property="FontWeight" Value="Normal"/>
 </Style>
-{% endhighlight %}
+```
 
 You want to put together a little test control that shows your themed `Button` against a system-themed `Button`:
 
-{% highlight XML %}
+```XML
 <StackPanel> 
     <Button>System Theme</Button> 
     <Button>Application Theme</Button> 
 </StackPanel>
-{% endhighlight %}
+```
 
 But that won't work - both buttons will inherit your theme. In this case, you can simply tell the second `Button` not to apply your `Style`, thus ensuring it inherits the system-defined one:
 
-{% highlight XML %}
+```XML
 <Button Style="{x:Null}">System Theme</Button>
-{% endhighlight %}
+```
 
 But what if you're theming something far more complex, like the `DataGrid` control? It has child controls (`DataGridCell`, `DataGridRow`, `DataGridColumnHeader` etc), each with their own style. How can you stop all those child controls from inheriting the styles provided by your theme? Well, sometimes the parent control (`DataGrid` in this case) will expose properties that allow you to override the styles for child controls:
 
-{% highlight XML %}
+```XML
 <DataGrid Style="{x:Null}" CellStyle="{x:Null}" RowStyle="{x:Null}" .../>
-{% endhighlight %}
+```
 
 But this is tedious, error-prone, and not all controls will expose such properties. What, then, is the diligent WPF journeyman to do?
 
 The best way around this problem I've found is to make use of the little-known [`FrameworkElement.InheritanceBehavior`](http://msdn.microsoft.com/en-us/library/system.windows.frameworkelement.inheritancebehavior.aspx) property. This `protected` property specifies how resource and property inheritance lookups should behave from any `FrameworkElement`. We can define a simple control with an inheritance behavior to meet our needs as follows:
 
-{% highlight C# %}
+```C#
 public sealed class UseSystemTheme : ContentControl 
 { 
     public UseSystemTheme() 
@@ -59,18 +59,18 @@ public sealed class UseSystemTheme : ContentControl
         this.InheritanceBehavior = System.Windows.InheritanceBehavior.SkipToThemeNow; 
     } 
 }
-{% endhighlight %}
+```
 
 Then, to prevent a control from inheriting our themed `Style`, we can simply wrap it in a `UseSystemTheme`. Going back to our `Button` example, it would look like:
 
-{% highlight XML %}
+```XML
 <StackPanel> 
     <local:UseSystemTheme> 
         <Button>System Theme</Button> 
     </local:UseSystemTheme> 
     <Button>Application Theme</Button> 
 </StackPanel>
-{% endhighlight %}
+```
 
 Now it's easy to ensure we're comparing the application theme against the system theme. Moreover, you can use the same approach regardless of how complex the contained elements are. So it’ll work whether you’re styling a `Button`, a `DataGrid`, or whatever.
 

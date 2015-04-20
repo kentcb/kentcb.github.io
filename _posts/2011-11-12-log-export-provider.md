@@ -7,7 +7,7 @@ We all know how important logging is to any non-trivial application, so it stand
 
 Wouldn't it be nice if logging were as simple as this:
 
-{% highlight C# %}
+```C#
 namespace SomeNamespace
 {
     public class SomeClass
@@ -19,22 +19,22 @@ namespace SomeNamespace
         }
     }
 }
-{% endhighlight %}
+```
 
 And, importantly, the resultant log entry looked something like this:
 
-{% highlight XML %}
+```XML
 [2011-11-12 12:09:04,749] [1] [DEBUG] [SomeNamespace.SomeClass] Created an instance of SomeClass.
-{% endhighlight %}
+```
 
 Prism ships with an `ILoggerFacade` interface that looks like this:
 
-{% highlight C# %}
+```C#
 public interface ILoggerFacade 
 { 
     void Log(string message, Category category, Priority priority); 
 }
-{% endhighlight %}
+```
 
 This is obviously a very bare-bones interface. Every time you write a log statement you'll be forced to:
 
@@ -51,7 +51,7 @@ These problems forced me to come up with a custom solution. I wanted my logging 
 
 The first problem (poor API) was easiest to solve. I defined my own interface as follows:
 
-{% highlight C# %}
+```C#
 public interface ILoggerService 
 { 
     bool IsVerboseEnabled 
@@ -118,22 +118,22 @@ public interface ILoggerService
  
     IDisposable Perf(string message, params object[] args); 
 }
-{% endhighlight %}
+```
 
 As you can see, this interface provides many overloads for all the relevant combinations of parameters you might need. This saves you, the caller, from having to deal with the annoyance of formatting messages or exceptions. There are also properties that can be used to check whether a given log level is enabled, which can be crucial in performance-critical paths. Finally, notice the handy `Perf` overloads which can be used to measure the performance of a block of code like this:
 
-{% highlight C# %}
+```C#
 using (loggerService.Perf("Authenticating the user")) 
 { 
     // do authentication here
 }
-{% endhighlight %}
+```
 
 The only thing I haven't included (because I haven't needed it) are generic `Write` methods that take the log level as a parameter instead of inferring the log level from the method name. Such methods can be useful in dynamic logging scenarios, so you may want to add your own.
 
 With the API defined, it was time to write an implementation:
 
-{% highlight C# %}
+```C#
 public sealed class Log4NetLoggerService : ILoggerService 
 { 
     private static readonly Level perfLevel = new Level(35000, "PERF"); 
@@ -289,7 +289,7 @@ public sealed class Log4NetLoggerService : ILoggerService
         } 
     } 
 }
-{% endhighlight %}
+```
 
 It's all pretty straightforward - most of the code just delegates to log4net.
 
@@ -299,7 +299,7 @@ MEF supports an abstraction called `ExportProvider`, which is an object that can
 
 Here is the code for our custom `ExportProvider`:
 
-{% highlight C# %}
+```C#
 public sealed class LoggerServiceExportProvider : ExportProvider 
 { 
     private static readonly ILoggerService log = new Log4NetLoggerService(LogManager.GetLogger(typeof(LoggerServiceExportProvider))); 
@@ -387,7 +387,7 @@ public sealed class LoggerServiceExportProvider : ExportProvider
         yield return export; 
     } 
 }
-{% endhighlight %}
+```
 
 There are several things to note about this implementation:
 
@@ -397,9 +397,9 @@ There are several things to note about this implementation:
 
 We can tell MEF to use our custom `ExportProvider` in the usual fashion:
 
-{% highlight C# %}
+```C#
 var compositionContainer = new CompositionContainer(new LoggerServiceExportProvider());
-{% endhighlight %}
+```
 
 With this infrastructure in place, we achieve our objectives entirely. The code I included right at the beginning of this post will work, and any log entries will include the details of the originating type. And it is ridiculously easy for us to imbue components created by MEF with logging statements. Simply add the import and then invoke the simple-to-use APIs.
 

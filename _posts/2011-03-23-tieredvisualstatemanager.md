@@ -35,7 +35,7 @@ You can find a sample attached. In this sample, I've re-templated a `CheckBox` c
 
 For the full control template, check out the [attached sample]({{ page.assets }}TieredExperience.zip). However, this outline gives you a taste for how things work:
 
-{% highlight XML %}
+```XML
 <local:TieredVisualStateManager x:Key="TieredVisualStateManager"/>
      
 <Style TargetType="CheckBox">
@@ -101,7 +101,7 @@ For the full control template, check out the [attached sample]({{ page.assets }}
         </Setter.Value>
     </Setter>
 </Style>
-{% endhighlight %}
+```
 
 Importantly, notice how I have not repeated anything. For example, the transitions to fade the check mark in and out are defined in the medium tier, but they will also be present if the active tier is high. Similarly, the logic to turn on the check mark is defined in the low tier CheckStates, but is inherited by higher tiers. This aggregation is controlled by the `TieredVisualStateManager.AggregateTiers` property, which is true by default. Setting it to `false` may be useful in some scenarios, but it does mean you may need to repeat yourself.
 

@@ -19,7 +19,7 @@ Enter my `MultiKeyGesture` class. At first I thought I'd subclass `InputGesture`
 
 Never mind though, because I can simply pass in `Key.None` to the `KeyGesture` constructor and override its matching logic:
 
-{% highlight C# %}
+```C#
 public MultiKeyGesture(IEnumerable<Key> keys, ModifierKeys modifiers, string displayString)
     : base(Key.None, modifiers, displayString)
 {
@@ -35,7 +35,7 @@ public override bool Matches(object targetElement, InputEventArgs inputEventArgs
 {
     ...
 }I
-{% endhighlight %}
+```
 
 In other words, I'm only inheriting from `KeyGesture` so that our particular gesture implementation gels with other WPF classes that make annoying assumptions and break the Liskov substitution principle.
 
@@ -58,13 +58,13 @@ If you look at the code, you'll notice a couple of other classes:
 
 These aren't strictly necessary unless you want `UIElement.InputBindings` and XAML integration respectively. `MultiKeyBinding` is used to map a `MultiKeyGesture` to a particular `Command` for a `UIElement` (in XAML in this case, but could also be in code, of course):
 
-{% highlight XML %}
+```XML
 <TextBox x:Name="_textBox">
     <TextBox.InputBindings>
         <local:MultiKeyBinding Command="{x:Static local:Commands.Secret}" Gesture="Ctrl+A,p,r,i,l,O,n,e,i,l,l,i,s,h,a,w,t"/>
     </TextBox.InputBindings>
 </TextBox>
-{% endhighlight %}
+```
 
 `MultiKeyGestureConverter` is used to parse the `Gesture` attribute in the XAML into a `MultiKeyGesture` for the `MultiKeyBinding`.
 

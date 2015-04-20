@@ -27,18 +27,18 @@ I then have a collection view called `LazyAsyncCollectionView<T>`. This is an ab
 
 The view needs to be aware of the fact that it's bound to an `AsyncLazy<T>` rather than a `T`. Ergo, bindings look like this:
 
-{% highlight XML %}
+```XML
 <TextBlock Text="{Binding Value.Property}"/>
-{% endhighlight %}
+```
 
 where `Value` is the aforementioned property on `AsyncLazy<T>`. If you have a lot of properties and you don't like dereferencing `Value` all the time, you could bind a container's `DataContext` like this:
 
-{% highlight XML %}
+```XML
 <StackPanel DataContext="{Binding Value}">
     <TextBlock Text="{Binding SomeProperty}"/>
     <TextBlock Text="{Binding SomeOtherProperty}"/>
 </StackPanel>
-{% endhighlight %}
+```
 
 The demo I put together uses all this stuff to display a list of people, the specifics of which you control (being a demo). As pages are being loaded, it displays a simple animation as a placeholder for the data:
 

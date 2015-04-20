@@ -6,7 +6,7 @@ tags: [ "C#", ".NET", "Xamarin", "iOS" ]
 
 Getting an iOS view to look *exactly* how you want it can be super frustrating. Take, for example, the simple requirement of hosting a `UISearchBar` inside a `UITableViewCell`. Here's some code as a starting point:
 
-{% highlight C# %}
+```C#
 namespace UISearchBarExample
 {
     using System;
@@ -60,7 +60,7 @@ namespace UISearchBarExample
         }
     }
 }
-{% endhighlight %} 
+``` 
 
 Obviously I'm not advocating this specific approach in a real app - I'm just getting to the crux of this post. Here is what this looks like when run (iPhone 4):
 
@@ -78,7 +78,7 @@ Despite all the advice I could find to the contrary, this is simply not possible
 
 I started with an extension method to make it easier to traverse the visual tree and find a particular view:
 
-{% highlight C# %}
+```C#
 public static class VisualTreeExtensions
 {
     public static T FindChildRecursively<T>(this UIView @this, Func<T, bool> predicate)
@@ -112,11 +112,11 @@ public static class VisualTreeExtensions
         return default(T);
     }
 }
-{% endhighlight %}
+```
 
 With that, I could then find the `UITextField` and make the necessary adjustments:
 
-{% highlight C# %}
+```C#
 child = new UISearchBar
 {
     SearchBarStyle = UISearchBarStyle.Minimal,
@@ -124,7 +124,7 @@ child = new UISearchBar
 };
 var textField = child.FindChildRecursively<UITextField>(_ => true);
 textField.BorderStyle = UITextBorderStyle.None;
-{% endhighlight %}
+```
 
 With that change, my UI now looks like I want it to:
 

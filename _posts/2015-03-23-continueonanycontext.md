@@ -5,9 +5,9 @@ tags: [ "C#", ".NET", "TPL" ]
 ---
 Surely one of the ugliest APIs in the Task Parallel Library is [`ConfigureAwait`](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.configureawait%28v=vs.110%29.aspx):
 
-{% highlight C# %}
+```C#
 public ConfiguredTaskAwaitable ConfigureAwait(bool continueOnCapturedContext)
-{% endhighlight %}
+```
 
 Let's count the ways this is wrong:
 
@@ -19,7 +19,7 @@ That's pretty awful. It's almost like the BCL team thought they might need to ad
 
 Anyway, I got really sick of writing (and reading) `ConfigureAwait(continueOnAnyContext: false)` so I wrote a couple of extension methods to make this nastiness go away:
 
-{% highlight C# %}
+```C#
 public static class TaskExtensions
 {
     public static ConfiguredTaskAwaitable ContinueOnAnyContext(this Task @this)
@@ -34,12 +34,12 @@ public static class TaskExtensions
         return @this.ConfigureAwait(continueOnCapturedContext: false);
     }
 }
-{% endhighlight %}
+```
 
 Now I can write this code instead:
 
-{% highlight C# %}
+```C#
 await SomethingAsync().ContinueOnAnyContext();
-{% endhighlight %}
+```
 
 This makes the intent of the code far clearer, as well as making it easier to write.

@@ -27,7 +27,7 @@ So the first thing you should do is provide a command-line switch to disable the
 
 In your entry code, you can have something like this:
 
-{% highlight C# %}
+```C#
 internal static void Main(string[] args)
 {
     var showSplash = !args.Any(x => string.Equals("-nosplash", x, StringComparison.OrdinalIgnoreCase));
@@ -43,7 +43,7 @@ private static void ShowSplashScreen()
     splashScreen = new SplashScreen("Splash.png");
     splashScreen.Show(true, true);
 }
-{% endhighlight %}
+```
 
 Now developers can simply configure their IDE to pass in this command line argument when starting the application. Most of the time, they can live in blissful ignorance of there even being a splash screen.
 
@@ -53,7 +53,7 @@ One of the biggest things you give up by using `SplashScreen` is dynamic content
 
 Once your build has access to a well-defined version number, you can use a custom task to modify a base splash image on the fly. Here's one I wrote (MSBuild):
 
-{% highlight XML %}
+```XML
 <UsingTask TaskName="AddTextToImage" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
     <ParameterGroup>
         <InputPath ParameterType="System.String" Required="true" />
@@ -117,13 +117,13 @@ Once your build has access to a well-defined version number, you can use a custo
         </Code>
     </Task>
 </UsingTask>
-{% endhighlight %}
+```
 
 In my case, I need to ensure the text within the splash image is right-aligned, so I have a `TopRightPoint` property. I use it like this:
 
-{% highlight XML %}
+```XML
 <AddTextToImage InputPath="$(ResourcesPath)/SplashTemplate.png" OutputPath="$(ResourcesPath)/Splash.png" TopRightPoint="350,115" Text="$(Version)"/>
-{% endhighlight %}
+```
 
 This takes the *SplashTemplate.png* image, adds the contents of the `Version` property at the location specified, then saves it to *Splash.png*. Easy. This step, of course, happens before I build the application, so that the modified *Splash.png* is included in the executable as a resource. I also check in a copy of the splash template as *Splash.png* so that developers don't run into missing file issues if they compile without the splash generation step having been executed. I then set up my source control to ignore any changes to that file.
 
@@ -141,18 +141,18 @@ Simply starting a timer in our entry code does not suffice, because it will star
 
 One approach might be to spin off another thread or task to periodically check whether the application is loaded. However, there's a cleaner way via WPF's [`DispatcherFrame`](http://kentb.blogspot.co.uk/2008/04/dispatcher-frames.html) mechanism. What we can do is pump the dispatcher until the application is loaded:
 
-{% highlight C# %}
+```C#
 private static void PumpDispatcherUntilPriority(DispatcherPriority dispatcherPriority)
 {
     var dispatcherFrame = new DispatcherFrame();
     Dispatcher.CurrentDispatcher.BeginInvoke((ThreadStart)(() => dispatcherFrame.Continue = false), dispatcherPriority);
     Dispatcher.PushFrame(dispatcherFrame);
 }
-{% endhighlight %}
+```
 
 We can use that method like this:
 
-{% highlight C# %}
+```C#
 if (showSplash)
 {
     // pump until loaded
@@ -170,7 +170,7 @@ if (showSplash)
     };
     splashTimer.Start();
 }
-{% endhighlight %}
+```
 
 Great! Now we have a splash that closes two seconds after the application loads. You could also pump the dispatcher until some other criteria is met. Notice, however, that you need to be careful. If the user has sufficient time to open a dialog window within the application, this can preclude the closure of the splash screen (until the dialog is dismissed). That's because opening the dialog will result in a new dispatcher frame that pumps until the dialog is closed. That's precisely why I used a timer above instead of just pumping for a fixed period of time.
 
@@ -180,18 +180,18 @@ Now that our splash closes some time after the application appears, another prob
 
 After perusing [the source for `SplashScreen`](http://referencesource.microsoft.com/#WindowsBase/src/Base/System/Windows/SplashScreen.cs), I found the reason for this jarring activation. This code is in the fade logic:
 
-{% highlight C# %}
+```C#
 // by default close gets called as soon as the first application window is created
 // since it will have become the active window we need to steal back the active window
 // status so that the fade out animation is visible. 
 IntPtr prevHwnd = UnsafeNativeMethods.SetActiveWindow(new HandleRef(null, _hwnd));
-{% endhighlight %}
+```
 
 The comment seems to suggest that the window is being activated only to ensure it is visible. Nasty.
 
 So where does this discovery leave us? We must either put up with the activation of the fading splash screen, or forgo the fade logic in `SplashScreen` and write our own. I did the latter, and it looks like this:
 
-{% highlight C# %}
+```C#
 private static void CloseSplashScreen(TimeSpan fadeDuration)
 {
     var fadeDurationTicks = fadeDuration.Ticks;
@@ -230,13 +230,13 @@ private static void CloseSplashScreen(TimeSpan fadeDuration)
         };
     dispatcherTimer.Start();
 }
-{% endhighlight %}
+```
 
 As you can see, I set up a timer that continuously fades the splash screen until it is no longer visible, at which point I close it. At no point do I activate the splash screen.
 
 Notice the call to `splashScreen.GetHandle()`? That's where things have gotten a bit ugly. `SplashScreen` does not expose its window handle to us, so I wrote an extension method to obtain it via reflection:
 
-{% highlight C# %}
+```C#
 internal static class SplashScreenExtensions
 {
     public static IntPtr GetHandle(this SplashScreen @this)
@@ -244,7 +244,7 @@ internal static class SplashScreenExtensions
         return (IntPtr)typeof(SplashScreen).GetField("_hwnd", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(@this);
     }
 }
-{% endhighlight %}
+```
 
 Not ideal, but it works. We can now fade our splash screen ourselves without it being activated.
 
@@ -252,9 +252,9 @@ Not ideal, but it works. We can now fade our splash screen ourselves without it 
 
 There's nothing more obnoxious that a splash screen that insists on covering other applications. OK, apart from [Ken Ham](http://en.wikipedia.org/wiki/Ken_Ham) that is. So when we show our splash screen, we should pass `false` for the `topmost` parameter (or don't specify the parameter at all, since `false` is the default value):
 
-{% highlight C# %}
+```C#
 splashScreen.Show(autoClose: false, topMost: false);
-{% endhighlight %}
+```
 
 However, doing so presents another issue. Other windows within our application can obstruct the splash screen. As we discovered in the last section, this is why WPF’s `SplashScreen` calls [`SetActiveWindow`](http://msdn.microsoft.com/en-gb/library/windows/desktop/ms646311(v=vs.85).aspx). But `SetActiveWindow`‘s primary purpose is to activate a window – bringing the window to the top of the stack is just a side-effect of that. We would like to bring our splash to the top of the window stack without activating it. Moreover, we need to ensure it remains at the top of the stack regardless of how many application windows happens to come (and maybe even go) during the time the splash is on-screen or fading away.
 
@@ -264,7 +264,7 @@ The second issue – ensuring our splash stays on top even as application window
 
 Ultimately I settled on the simplest possible thing I could get to work:
 
-{% highlight C# %}
+```C#
 splashForegroundTimer = new DispatcherTimer(DispatcherPriority.Normal);
 splashForegroundTimer.Interval = TimeSpan.FromMilliseconds(10);
 splashForegroundTimer.Tick += delegate
@@ -272,7 +272,7 @@ splashForegroundTimer.Tick += delegate
     SafeNativeMethods.SetWindowPos(splashScreen.GetHandle(), SafeNativeMethods.HWND_TOP, 0, 0, 0, 0, SafeNativeMethods.SetWindowPosFlags.SWP_NOMOVE | SafeNativeMethods.SetWindowPosFlags.SWP_NOSIZE | SafeNativeMethods.SetWindowPosFlags.SWP_NOACTIVATE);
 };
 splashForegroundTimer.Start();
-{% endhighlight %}
+```
 
 I have a timer that brings the splash screen to the top of the z-order every 10ms (I didn’t experiment too much with this interval, so it may be possible to lengthen it). Notice that I use `SWP_NOACTIVATE` to ensure the splash isn't activated. Notice also that this isn't a perfect solution. There is still a 10ms (give or take) window wherein the splash may be underneath application windows. In practice, however, I have found this to work satisfactorily. If anyone has any other ideas on how to achieve this more cleanly and simply then I’d love to hear them.
 
