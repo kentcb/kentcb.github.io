@@ -5,7 +5,7 @@ tags: [ "C#", ".NET", "Rx" ]
 ---
 Continuing with the theme of extension methods that make life easier, here's one I tend to have defined in any Rx project I'm working on:
 
-{% highlight C# %}
+```C#
 namespace System.Reactive.Disposables
 {
     using System;
@@ -24,11 +24,11 @@ namespace System.Reactive.Disposables
         }
     }
 }
-{% endhighlight %}
+```
 
 It's used along these lines:
 
-{% highlight C# %}
+```C#
 someObservable
     .Subscribe(...)
     .AddTo(disposables);
@@ -36,11 +36,11 @@ someObservable
 someObservable
     .ToProperty(...)
     .AddTo(disposables);
-{% endhighlight %}
+```
 
 Basically it makes it simple and clean to add any `IDisposable` to an existing `CompositeDisposable` as part of a reactive pipeline. The alternative is uglier:
 
-{% highlight C# %}
+```C#
 disposables.Add(
     someObservable
         .Subscribe(...))
@@ -48,6 +48,6 @@ disposables.Add(
 disposables.Add(
 	someObservable
 	    .ToProperty(...));
-{% endhighlight %}
+```
 
 And yes, I do define it in the `System.Reactive.Disposables` namespace because that means that whenever I've imported `CompositeDisposable` I automatically get the extension method too. One less `using` statement and whole lot less annoyance.
