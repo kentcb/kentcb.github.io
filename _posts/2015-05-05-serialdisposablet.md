@@ -1,5 +1,5 @@
 ---
-title: SerialDisposable<T>
+title: SerialDisposable&lt;T&gt;
 assets: /assets/2015-05-05-serialdisposablet/
 tags: [ ".NET", "Rx" ]
 ---
