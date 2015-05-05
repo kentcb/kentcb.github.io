@@ -4,7 +4,7 @@ param(
 )
 
 $date = Get-Date -format "yyyy-MM-dd"
-$name = $date + "-" + $title.ToLowerInvariant().Replace(' ', '-')
+$name = $date + "-" + $title.ToLowerInvariant().Replace(' ', '-').Replace('<', '').Replace('>', '')
 $postPath = "_posts/" + $name + ".md"
 $assetsPath = "assets/" + $name + "/"
 $postContents = @"
