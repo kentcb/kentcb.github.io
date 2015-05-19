@@ -53,6 +53,20 @@ public class SomeService
         this.initializationGuard = new InitializationGuard(this.InitializeCoreAsync);
     }
 
+    public void SomeOperation()
+    {
+        this.initializationGuard.EnsureInitialized();
+
+        // do the operation
+    }
+
+    public async Task SomeOperationAsync()
+    {
+        this.initializationGuard.EnsureInitialized();
+
+        // do the operation
+    }
+
     public async Task InitializeAsync(CancellationToken cancellationToken = default(CancellationToken))
     {
         await this.initializationGuard.InitializeAsync(cancellationToken);
@@ -67,7 +81,9 @@ public class SomeService
  
 Here we construct our `InitializationGuard` and tell it to invoke `InitializeCoreAsync` when initialization should be instigated. Inside `InitializeCoreAsync` we perform our initialization logic, which might involve awaiting any number of asynchronous operations.
 
-We also expose an `InitializeAsync` method, which clients of our service can invoke (and await) to ensure the service is initialized. Where you do this is application-specific. In my mobile apps, I tend to have the startup logic asynchronously initialize any services that require it. Thus, the application won't even attempt to create other dependent objects (such as view models) until all services are properly initialized.
+`SomeOperation` and `SomeOperationAsync` just demonstrates the use of `EnsureInitialized` to guard against the case where clients of the service are neglecting to initialize it first. 
+
+To allow clients to request that initialization, we expose an `InitializeAsync` method. Where this initialization is performed is application-specific. In my mobile apps, I tend to have the startup logic asynchronously initialize any services that require it. Thus, the application won't even attempt to create other dependent objects (such as view models) until all services are properly initialized.
 
 That brings us to the problem of initialization errors. When an error occurs during initialization, `InitializationGuard` reverts its state to `Uninitialized` and re-throws the exception. Thus, any client code awaiting the initialization will receive the exception and has the opportunity to deal with it (perhaps by retrying - it really depends on whether your initialization logic is *expected* to fail periodically or not).
 
