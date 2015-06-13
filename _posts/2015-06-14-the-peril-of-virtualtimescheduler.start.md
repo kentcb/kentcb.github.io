@@ -12,7 +12,10 @@ public void theres_a_bomb_on_the_bus()
     var scheduler = new TestScheduler();
     var count = 0;
     Observable
-        .Timer(TimeSpan.FromMilliseconds(10), TimeSpan.FromMilliseconds(10), scheduler)
+        .Timer(
+            TimeSpan.FromMilliseconds(10),
+            TimeSpan.FromMilliseconds(10),
+            scheduler)
         .Subscribe(_ => ++count);
 
     scheduler.Start();
@@ -67,7 +70,10 @@ public void theres_a_bomb_on_the_bus()
     var scheduler = new TestScheduler();
     var count = 0;
     Observable
-        .Timer(TimeSpan.FromMilliseconds(10), TimeSpan.FromMilliseconds(10), scheduler)
+        .Timer(
+            TimeSpan.FromMilliseconds(10),
+            TimeSpan.FromMilliseconds(10),
+            scheduler)
         .Subscribe(_ => ++count);
 
     scheduler.AdvanceBy(TimeSpan.FromSeconds(1).Ticks);
