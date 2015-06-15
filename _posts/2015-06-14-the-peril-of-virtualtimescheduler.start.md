@@ -3,7 +3,7 @@ title: The Peril of VirtualTimeScheduler.Start
 assets: /assets/2015-06-14-the-peril-of-virtualtimescheduler.start/
 tags: [ ".NET", "Rx", "reactive-extensions" ]
 ---
-Pop quiz, host-shot: does the following test pass or fail?
+Pop quiz, hot-shot: does the following test pass or fail?
 
 ```C#
 [Fact]
