@@ -20,13 +20,17 @@ The second point is more relevant, since the primary job of a view model is to p
 
 ## Property Change Notification in a Related View Model
 
-Suppose you have two view models that are related. For example, a `ParentViewModel` and `ChildViewModel`. Let’s say that the `ChildViewModel` has a reference to a `ParentViewModel`. When the `Savings` property on the `ParentViewModel` changes, we want to update the `Inheritance` property on the `ChildViewModel`. Using `DependencyObject`s as view models, we can simply use data binding to achieve this:
+Suppose you have two view models that are related. For example, a `ParentViewModel` and `ChildViewModel`. Let’s say that the `ChildViewModel` has a reference to a `ParentViewModel`. When the `Savings` property on the `ParentViewModel` changes, we want to update the `Inheritance` property on the `ChildViewModel`. Using `DependencyObject`s as view models, we can use data binding to achieve this:
 
 ```C#
 //this code is in the ChildViewModel constructor
 var binding = new Binding("Savings") { Source = parent};
-BindingOperations.SetBinding(this, ChildViewModel.InheritanceProperty, binding);Using POCOs we need to do a little more work. Typically your POCO view models will implement INotifyPropertyChanged, so the code would look more like this: 
- 
+BindingOperations.SetBinding(this, ChildViewModel.InheritanceProperty, binding);
+```
+
+Using POCOs we need to do a little more work. Typically your POCO view models will implement `INotifyPropertyChanged`, so the code would look more like this: 
+
+```C# 
 //this code is in the ChildViewModel constructor
 parent.PropertyChanged += delegate(object sender, PropertyChangedEventArgs e)
 {
