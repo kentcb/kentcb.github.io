@@ -53,4 +53,5 @@ Now I can run tests for my mobile applications using the VS test runner. There a
 Also, this is only for tests. I happen to spend most of my time in tests. But when I do get to the UI layer, this approach obviously won't help. Again, once the tool chain matures enough, I hope to ditch this approach completely and do everything with an edit and continue approach. But until then, this seems like it's going to save me a lot of time.
 
 <sup>1</sup> Yes, I realise that performance work is very much platform dependent. However, rectifying memory leaks and algorithmic issues on one platform will certainly benefit others.
+
 <sup>2</sup> I'm still waiting for someone of that sentiment to do a comprehensive write-up on exactly why this is.
