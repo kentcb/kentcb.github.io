@@ -1,7 +1,7 @@
 # see http://jekyllrb.com/docs/configuration/
 
 # Dependencies
-markdown:           redcarpet
+markdown:           kramdown
 highlighter:        rouge
 
 # Permalinks
