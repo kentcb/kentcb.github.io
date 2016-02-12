@@ -17,7 +17,7 @@ Because my client was concerned about sensitive data being acquired from lost or
 
 You'll notice from the above class diagram that `IEncryptionProvider` includes no notion of a key or password. For that reason, I first needed my own interface via which a password could be provided:
 
-```C#
+```csharp
 public interface IPasswordProtectedEncryptionProvider : IEncryptionProvider
 {
     void SetPassword(string password);
@@ -26,7 +26,7 @@ public interface IPasswordProtectedEncryptionProvider : IEncryptionProvider
 
 This gives my consuming code a means of supplying the password entered by users. Here is the implementation of this interface:
 
-```C#
+```csharp
 public sealed class PasswordProtectedEncryptionProvider : IPasswordProtectedEncryptionProvider
 {
     private static readonly byte[] salt = Encoding.ASCII.GetBytes(# add a random, 16 character string here #);
