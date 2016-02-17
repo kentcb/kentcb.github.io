@@ -5,7 +5,7 @@ tags: [ ".NET", "Rx", "reactive-extensions" ]
 ---
 Pop quiz, hot-shot: does the following test pass or fail?
 
-```C#
+```csharp
 [Fact]
 public void theres_a_bomb_on_the_bus()
 {
@@ -36,7 +36,7 @@ The documentation for the `Start` method on `TestScheduler` (which is actually i
 
 OK, *thanks* [Ghostdoc](http://submain.com/products/ghostdoc.aspx). Obviously, it's not at all clear what that means until we look at [the code](https://github.com/Reactive-Extensions/Rx.NET/blob/a13e3ff05bdded5cef2bf40bface22f8fa4ae316/Rx.NET/Source/System.Reactive.Linq/Reactive/Concurrency/VirtualTimeScheduler.cs). Here's the essence:
 
-```C#
+```csharp
 do
 {
     var next = GetNext();
@@ -63,7 +63,7 @@ So how do we fix our test? In this contrived case we have direct access to the o
 
 However, in reality we're unlikely to have access to the observable. It's probably an implementation detail of an application component, such as a view model. Therefore we can't use these approaches. To the best of my knowledge, the best solution is to forgo `Start` altogether and instead use the `AdvanceBy` method:
 
-```C#
+```cs
 [Fact]
 public void theres_a_bomb_on_the_bus()
 {
