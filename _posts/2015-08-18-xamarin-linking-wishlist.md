@@ -49,7 +49,7 @@ Configuring the linker is currently a case of creating an XML file, googling for
 
 For what it's worth, the syntax for these scenarios looks like this:
 
-```XML
+```xml
 <!-- preserve entire Splat assembly -->
 <assembly fullname="Splat">
     <type fullname="*"/>

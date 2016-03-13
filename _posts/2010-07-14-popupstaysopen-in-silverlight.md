@@ -7,7 +7,7 @@ Continuing on with the theme of restoring some WPF goodness to Silverlight, here
 
 Usage looks like this:
 
-```XML
+```xml
 <Popup b:Popup.StaysOpen="False">
     <TextBlock>Popup contents</TextBlock>
 </Popup>

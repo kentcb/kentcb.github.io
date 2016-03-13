@@ -6,7 +6,7 @@ tags: [ "C#", ".NET", "Xamarin", "iOS" ]
 
 Getting an iOS view to look *exactly* how you want it can be super frustrating. Take, for example, the simple requirement of hosting a `UISearchBar` inside a `UITableViewCell`. Here's some code as a starting point:
 
-```C#
+```csharp
 namespace UISearchBarExample
 {
     using System;
@@ -78,7 +78,7 @@ Despite all the advice I could find to the contrary, this is simply not possible
 
 I started with an extension method to make it easier to traverse the visual tree and find a particular view:
 
-```C#
+```csharp
 public static class VisualTreeExtensions
 {
     public static T FindChildRecursively<T>(this UIView @this, Func<T, bool> predicate)
@@ -116,7 +116,7 @@ public static class VisualTreeExtensions
 
 With that, I could then find the `UITextField` and make the necessary adjustments:
 
-```C#
+```csharp
 child = new UISearchBar
 {
     SearchBarStyle = UISearchBarStyle.Minimal,

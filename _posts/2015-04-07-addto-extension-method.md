@@ -5,7 +5,7 @@ tags: [ "C#", ".NET", "Rx" ]
 ---
 Continuing with the theme of extension methods that make life easier, here's one I tend to have defined in any Rx project I'm working on:
 
-```C#
+```csharp
 namespace System.Reactive.Disposables
 {
     using System;
@@ -28,7 +28,7 @@ namespace System.Reactive.Disposables
 
 It's used along these lines:
 
-```C#
+```csharp
 someObservable
     .Subscribe(...)
     .AddTo(disposables);
@@ -40,7 +40,7 @@ someObservable
 
 Basically it makes it simple and clean to add any `IDisposable` to an existing `CompositeDisposable` as part of a reactive pipeline. The alternative is uglier:
 
-```C#
+```csharp
 disposables.Add(
     someObservable
         .Subscribe(...))

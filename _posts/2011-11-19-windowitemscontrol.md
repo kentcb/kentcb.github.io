@@ -5,7 +5,7 @@ tags: [ ".NET", "WPF" ]
 ---
 The application I'm currently working on - top secret, mum's the word, your death for my indiscretion, you get the idea - includes a widget-style interface. In order to render these widgets, I use an `ItemsControl` and bind it to a collection of view models, each of which represents a widget. I use a `Canvas` to lay them out according to their `XOffset` and `YOffset` properties. Something like this:
 
-```XML
+```xml
 <ItemsControl ItemsSource="{Binding Widgets}">
     <ItemsControl.ItemsPanel>
         <ItemsPanelTemplate>
@@ -36,13 +36,13 @@ No problem, you say. Just host your widgets inside windows instead and be done w
 
 But I want it to be seamless with respect to the current code base. I don't want to have to go hook up a bunch of event handlers to create/show/close windows when my widget collection changes. I don't want to have to change the way my view models keep track of widget positions and sizes (all persisted across application restarts, of course). All I want to do is change this:
 
-```XML
+```xml
 <ItemsControl ItemsSource="{Binding Widgets}">
 ```
 
 to this:
 
-```XML
+```xml
 <WindowItemsControl ItemsSource="{Binding Widgets}">
 ```
 
@@ -60,7 +60,7 @@ What I did instead was had the `WindowItemsControl` create `WindowItemsControlIt
 
 The code is actually quite neat and compact. Here is the code for `WindowItemsControl`:
 
-```C#
+```csharp
 public class WindowItemsControl : ItemsControl
 {
     public static readonly DependencyProperty ShowDialogProperty = DependencyProperty.Register(
@@ -165,7 +165,7 @@ Pretty straightforward stuff. Note the following:
 
 The `WindowItemsControl` works in conjunction with the `WindowItemsControlItem`, which looks like this:
 
-```C#
+```csharp
 public class WindowItemsControlItem : FrameworkElement
 {
     private readonly WindowItemsControl windowItemsControl;

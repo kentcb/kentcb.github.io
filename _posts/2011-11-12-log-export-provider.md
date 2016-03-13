@@ -7,7 +7,7 @@ We all know how important logging is to any non-trivial application, so it stand
 
 Wouldn't it be nice if logging were as simple as this:
 
-```C#
+```csharp
 namespace SomeNamespace
 {
     public class SomeClass
@@ -23,13 +23,13 @@ namespace SomeNamespace
 
 And, importantly, the resultant log entry looked something like this:
 
-```XML
+```xml
 [2011-11-12 12:09:04,749] [1] [DEBUG] [SomeNamespace.SomeClass] Created an instance of SomeClass.
 ```
 
 Prism ships with an `ILoggerFacade` interface that looks like this:
 
-```C#
+```csharp
 public interface ILoggerFacade 
 { 
     void Log(string message, Category category, Priority priority); 
@@ -51,7 +51,7 @@ These problems forced me to come up with a custom solution. I wanted my logging 
 
 The first problem (poor API) was easiest to solve. I defined my own interface as follows:
 
-```C#
+```csharp
 public interface ILoggerService 
 { 
     bool IsVerboseEnabled 
@@ -122,7 +122,7 @@ public interface ILoggerService
 
 As you can see, this interface provides many overloads for all the relevant combinations of parameters you might need. This saves you, the caller, from having to deal with the annoyance of formatting messages or exceptions. There are also properties that can be used to check whether a given log level is enabled, which can be crucial in performance-critical paths. Finally, notice the handy `Perf` overloads which can be used to measure the performance of a block of code like this:
 
-```C#
+```csharp
 using (loggerService.Perf("Authenticating the user")) 
 { 
     // do authentication here
@@ -133,7 +133,7 @@ The only thing I haven't included (because I haven't needed it) are generic `Wri
 
 With the API defined, it was time to write an implementation:
 
-```C#
+```csharp
 public sealed class Log4NetLoggerService : ILoggerService 
 { 
     private static readonly Level perfLevel = new Level(35000, "PERF"); 
@@ -299,7 +299,7 @@ MEF supports an abstraction called `ExportProvider`, which is an object that can
 
 Here is the code for our custom `ExportProvider`:
 
-```C#
+```csharp
 public sealed class LoggerServiceExportProvider : ExportProvider 
 { 
     private static readonly ILoggerService log = new Log4NetLoggerService(LogManager.GetLogger(typeof(LoggerServiceExportProvider))); 
@@ -397,7 +397,7 @@ There are several things to note about this implementation:
 
 We can tell MEF to use our custom `ExportProvider` in the usual fashion:
 
-```C#
+```csharp
 var compositionContainer = new CompositionContainer(new LoggerServiceExportProvider());
 ```
 

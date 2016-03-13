@@ -9,7 +9,7 @@ Recently I was working on a Xamarin Forms application and needed a control that 
 
 For the purposes of this post, pretend I wanted a control that allows users to flick between any number of child controls. We might define it like this:
 
-```C#
+```csharp
 [ContentProperty("Children")]
 public class FlickView : View, IViewContainer<View>
 {
@@ -29,7 +29,7 @@ public class FlickView : View, IViewContainer<View>
 
 In the iOS renderer for our `FlickView` control, we'd like to place each child's native view inside a `UIScrollView`. We would do so using code like this:
 
-```C#
+```csharp
 public class FlickViewRenderer : ViewRenderer<FlickView, UIView>
 {
     private UIScrollView scrollView;
@@ -110,7 +110,7 @@ The `LayoutSubviews` method assigns the bounds of the renderer to the `UIScrollV
 
 With our control in place, we can define a quick UI with which to test it:
 
-```XML
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 
 <ContentPage
@@ -157,7 +157,7 @@ Over the course of a week or two, I exchanged several emails with Xamarin suppor
 
 The problem is that each Xamarin Forms element needs to know its platform. By that I mean it needs its `Platform` property set to an instance of `IPlatform`. Every `Element` has a `Platform` property for this purpose, but the problem is that it is currently `internal`. Until the fine folks at Xamarin see fit to open this API up to us plebs, this forces us to use reflection to solve our problem. In `OnElementChanged` we need to do this:
 
-```C#
+```csharp
 ...
 
 // HACK: we have to explicitly pass the platform through to each child element

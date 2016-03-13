@@ -9,7 +9,7 @@ From early on I decided to utilise [auto layout](https://developer.apple.com/lib
 
 But even auto layout is far from a walk in the park. Here's an example of some C# code that creates an `NSLayoutConstraint` using the UIKit APIs:
 
-```C#
+```csharp
 var constraint = NSLayoutConstraint.Create(
     this.checkmarkImage,
     NSLayoutAttribute.Left,
@@ -24,7 +24,7 @@ In this case, we're ensuring the left side of our `checkmarkImage` is positioned
 
 So having decided to use auto layout I realised I needed to find a better way to leverage it into my code base. It wasn't long before I found Frank Krueger's ([@praeclarum](https://twitter.com/praeclarum)) [Easy Layout gist](https://gist.github.com/praeclarum/6225853). The idea of Frank's code was to allow constraints to be specified via expressions. Our example above could instead be written as:
 
-```C#
+```csharp
 this.ContentView.ConstrainLayout(() =>
     this.checkmarkImage.Left() == this.ContentView.Left() + 20);
 ```
@@ -37,7 +37,7 @@ This was an excellent starting point for facilitating auto layout within my iOS 
 
 OK, a small thing first. I wanted to remove the need for hard-coded sizes in constraint expressions. Most of the time we care about "standard" spacing, such as that between a view and its superview, and between sibling views. To that end, I added several constants to the `Layout` class:
 
-```C#
+```csharp
 public const int StandardSiblingViewSpacing = 8;
 public const int HalfSiblingViewSpacing = StandardSiblingViewSpacing / 2;
 public const int StandardSuperviewSpacing = 20;
@@ -50,21 +50,21 @@ public const float LowPriority = (float)UILayoutPriority.DefaultLow;
 
 The first set of constants allows us to change our constraint to:   
 
-```C#
+```csharp
 this.ContentView.ConstrainLayout(() =>
     this.checkmarkImage.Left() == this.ContentView.Left() + Layout.StandardSuperviewSpacing);
 ```
 
 Or, by using C# 6's `using static` feature:
 
-```C#
+```csharp
 this.ContentView.ConstrainLayout(() =>
     this.checkmarkImage.Left() == this.ContentView.Left() + StandardSuperviewSpacing);
 ```
 
 The second group of constants allows us to more easily specify priorities when calling `SetContentHuggingPriority` and `SetContentCompressionResistancePriority`. Using `UILayoutPriority` directly means we need to cast:
 
-```C#
+```csharp
 this.checkmarkImage.SetContentHuggingPriority(
     (float)UILayoutPriority.DefaultHigh,
     UILayoutConstraintAxis.Horizontal);
@@ -72,7 +72,7 @@ this.checkmarkImage.SetContentHuggingPriority(
 
 Versus this:
 
-```C#
+```csharp
 this.checkmarkImage.SetContentHuggingPriority(
     Layout.HighPriority,
     UILayoutConstraintAxis.Horizontal);
@@ -82,7 +82,7 @@ this.checkmarkImage.SetContentHuggingPriority(
 
 One thing I really wanted was to be able to support constraint code like this:
 
-```C#
+```csharp
 var gapSize = someBoolean ? 0 : Layout.StandardSiblingViewSpacing;
 
 cell.ConstrainLayout(() =>
@@ -113,7 +113,7 @@ Originally there was no way to constrain against a view's baseline. My code has 
 
 Consequently, we can write constraints such as:
 
-```C#
+```csharp
 this.View.ConstrainLayout(() =>
     this.nameLabel.Baseline() == nameTextView.Baseline());
 ```
@@ -126,7 +126,7 @@ In Xamarin Studio, comparing two `float` values results in compiler warnings. Be
 
 To solve this, I created the `LayoutExtensions` class mentioned above. By using extension methods rather than the existing properties (such as `Frame.Left`) I could both reduce the verbosity of constraint code, and get around the compiler warnings. The extension methods all return `int`:
 
-```C#
+```csharp
 public static int Left(this UIView @this) => 0;
 ```
 
@@ -166,7 +166,7 @@ The eventual solution (again, thanks to Rolf) involves "swizzling", which is the
 
 The upshot is that we can specify names for our controls like this (this will still build for non-`DEBUG` builds, but the calls to `Name` will have no effect):
 
-```C#
+```csharp
 this.ContentView.ConstrainLayout(() =>
     this.clientNameLabel.Top() == this.ContentView.Top() + Layout.StandardSiblingViewSpacing &&
     this.clientNameLabel.Top() == this.ContentView.Top() &&
@@ -194,7 +194,7 @@ Much better!
 
 Firstly, if you want to enable the support for naming controls, be sure to include this first thing in your `AppDelegate`:
 
-```C#
+```csharp
 #if DEBUG
     Layout.DebugConstraint.Swizzle();
 #endif
@@ -204,7 +204,7 @@ And here is all the code, including unit tests:
 
 ### Layout.cs
 
-```C#
+```csharp
 // this code is a heavily modified (and tested) version of https://gist.github.com/praeclarum/6225853
 
 namespace iOS.Utility
@@ -662,7 +662,7 @@ namespace iOS.Utility
 
 ### LayoutExtensions.cs
 
-```C#
+```csharp
 namespace iOS.Utility
 {
     using UIKit;
@@ -704,7 +704,7 @@ namespace iOS.Utility
 
 ### LayoutFixture.cs
 
-```C#
+```csharp
 namespace UnitTests.iOS.Utility
 {
     using System;

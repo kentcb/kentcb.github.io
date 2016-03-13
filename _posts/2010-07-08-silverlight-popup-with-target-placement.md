@@ -14,7 +14,7 @@ To imbue Silverlight with the WPF goodness that is relative `Popup` placement, I
 
 Usage looks like this:
 
-```XML
+```xml
 <Popup b:PopupPlacement.PlacementTarget="{Binding ElementName=someElement}">
     <b:Popup.PreferredOrientations>
         <b:PopupOrientationCollection>

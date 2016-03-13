@@ -7,7 +7,7 @@ If you've ever put together a custom theme for WPF, you'll know the value of com
 
 Suppose you're implementing a style for buttons. It looks like this:
 
-```XML
+```xml
 <Style TargetType="Button">
     <Setter Property="Background">
         <Setter.Value>
@@ -28,7 +28,7 @@ Suppose you're implementing a style for buttons. It looks like this:
 
 You want to put together a little test control that shows your themed `Button` against a system-themed `Button`:
 
-```XML
+```xml
 <StackPanel> 
     <Button>System Theme</Button> 
     <Button>Application Theme</Button> 
@@ -37,13 +37,13 @@ You want to put together a little test control that shows your themed `Button` a
 
 But that won't work - both buttons will inherit your theme. In this case, you can simply tell the second `Button` not to apply your `Style`, thus ensuring it inherits the system-defined one:
 
-```XML
+```xml
 <Button Style="{x:Null}">System Theme</Button>
 ```
 
 But what if you're theming something far more complex, like the `DataGrid` control? It has child controls (`DataGridCell`, `DataGridRow`, `DataGridColumnHeader` etc), each with their own style. How can you stop all those child controls from inheriting the styles provided by your theme? Well, sometimes the parent control (`DataGrid` in this case) will expose properties that allow you to override the styles for child controls:
 
-```XML
+```xml
 <DataGrid Style="{x:Null}" CellStyle="{x:Null}" RowStyle="{x:Null}" .../>
 ```
 
@@ -51,7 +51,7 @@ But this is tedious, error-prone, and not all controls will expose such properti
 
 The best way around this problem I've found is to make use of the little-known [`FrameworkElement.InheritanceBehavior`](http://msdn.microsoft.com/en-us/library/system.windows.frameworkelement.inheritancebehavior.aspx) property. This `protected` property specifies how resource and property inheritance lookups should behave from any `FrameworkElement`. We can define a simple control with an inheritance behavior to meet our needs as follows:
 
-```C#
+```csharp
 public sealed class UseSystemTheme : ContentControl 
 { 
     public UseSystemTheme() 
@@ -63,7 +63,7 @@ public sealed class UseSystemTheme : ContentControl
 
 Then, to prevent a control from inheriting our themed `Style`, we can simply wrap it in a `UseSystemTheme`. Going back to our `Button` example, it would look like:
 
-```XML
+```xml
 <StackPanel> 
     <local:UseSystemTheme> 
         <Button>System Theme</Button> 

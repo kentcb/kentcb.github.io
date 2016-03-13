@@ -17,7 +17,7 @@ Fortunately, the Visual State Manager infrastructure is extensible in that it al
 
 Enter, the `MinimumTimeVisualStateManager`:
 
-```C#
+```csharp
 public class MinimumTimeVisualStateManager : VisualStateManager
 {
     public static readonly DependencyProperty MinimumTimeProperty = DependencyProperty.RegisterAttached("MinimumTime",
@@ -109,7 +109,7 @@ By way of explanation, the `MinimumTimeVisualStateManager` uses an attached prop
 
 With this custom visual state manager, we can impose minimum times for states like this:
 
-```XML
+```xml
 <Grid x:Name="root">
     <VisualStateManager.CustomVisualStateManager>
         <kb:MinimumTimeVisualStateManager/>

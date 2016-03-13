@@ -11,7 +11,7 @@ Due to the potential lag between initialization instigation and initialization c
 
 Having fought through the problems of asynchronous initialization several times in different projects, I decided to write an abstraction around it. I called it `InitializationGuard` (my namespace suffices to make it obviously asynchronous in nature, but you might want to call yours `AsyncInitializationGuard` or similar). The public API looks like this (full code is included at the end of this post):
 
-```C#
+```csharp
 public enum InitializationGuardState
 {
     Uninitialized,
@@ -43,7 +43,7 @@ Finally, the `EnsureInitialized` method makes it easy for client code to throw a
 
 The pattern for typical client code is:
 
-```C#
+```csharp
 public class SomeService
 {
     private readonly InitializationGuard initializationGuard;
@@ -91,7 +91,7 @@ Importantly, this means that it *is* possible for spurious invocations of `Initi
 
 So there you have it - a useful helper class that allows you to implement asynchronous initialization and protect yourself from some of the risks involved. The full code (including tests) follows.
 
-```C#
+```csharp
 using System;
 using System.Diagnostics;
 using System.Threading;

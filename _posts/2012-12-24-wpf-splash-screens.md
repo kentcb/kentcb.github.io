@@ -27,7 +27,7 @@ So the first thing you should do is provide a command-line switch to disable the
 
 In your entry code, you can have something like this:
 
-```C#
+```csharp
 internal static void Main(string[] args)
 {
     var showSplash = !args.Any(x => string.Equals("-nosplash", x, StringComparison.OrdinalIgnoreCase));
@@ -53,7 +53,7 @@ One of the biggest things you give up by using `SplashScreen` is dynamic content
 
 Once your build has access to a well-defined version number, you can use a custom task to modify a base splash image on the fly. Here's one I wrote (MSBuild):
 
-```XML
+```xml
 <UsingTask TaskName="AddTextToImage" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
     <ParameterGroup>
         <InputPath ParameterType="System.String" Required="true" />
@@ -121,7 +121,7 @@ Once your build has access to a well-defined version number, you can use a custo
 
 In my case, I need to ensure the text within the splash image is right-aligned, so I have a `TopRightPoint` property. I use it like this:
 
-```XML
+```xml
 <AddTextToImage InputPath="$(ResourcesPath)/SplashTemplate.png" OutputPath="$(ResourcesPath)/Splash.png" TopRightPoint="350,115" Text="$(Version)"/>
 ```
 
@@ -141,7 +141,7 @@ Simply starting a timer in our entry code does not suffice, because it will star
 
 One approach might be to spin off another thread or task to periodically check whether the application is loaded. However, there's a cleaner way via WPF's [`DispatcherFrame`](http://kentb.blogspot.co.uk/2008/04/dispatcher-frames.html) mechanism. What we can do is pump the dispatcher until the application is loaded:
 
-```C#
+```csharp
 private static void PumpDispatcherUntilPriority(DispatcherPriority dispatcherPriority)
 {
     var dispatcherFrame = new DispatcherFrame();
@@ -152,7 +152,7 @@ private static void PumpDispatcherUntilPriority(DispatcherPriority dispatcherPri
 
 We can use that method like this:
 
-```C#
+```csharp
 if (showSplash)
 {
     // pump until loaded
@@ -180,7 +180,7 @@ Now that our splash closes some time after the application appears, another prob
 
 After perusing [the source for `SplashScreen`](http://referencesource.microsoft.com/#WindowsBase/src/Base/System/Windows/SplashScreen.cs), I found the reason for this jarring activation. This code is in the fade logic:
 
-```C#
+```csharp
 // by default close gets called as soon as the first application window is created
 // since it will have become the active window we need to steal back the active window
 // status so that the fade out animation is visible. 
@@ -191,7 +191,7 @@ The comment seems to suggest that the window is being activated only to ensure i
 
 So where does this discovery leave us? We must either put up with the activation of the fading splash screen, or forgo the fade logic in `SplashScreen` and write our own. I did the latter, and it looks like this:
 
-```C#
+```csharp
 private static void CloseSplashScreen(TimeSpan fadeDuration)
 {
     var fadeDurationTicks = fadeDuration.Ticks;
@@ -236,7 +236,7 @@ As you can see, I set up a timer that continuously fades the splash screen until
 
 Notice the call to `splashScreen.GetHandle()`? That's where things have gotten a bit ugly. `SplashScreen` does not expose its window handle to us, so I wrote an extension method to obtain it via reflection:
 
-```C#
+```csharp
 internal static class SplashScreenExtensions
 {
     public static IntPtr GetHandle(this SplashScreen @this)
@@ -252,7 +252,7 @@ Not ideal, but it works. We can now fade our splash screen ourselves without it 
 
 There's nothing more obnoxious that a splash screen that insists on covering other applications. OK, apart from [Ken Ham](http://en.wikipedia.org/wiki/Ken_Ham) that is. So when we show our splash screen, we should pass `false` for the `topmost` parameter (or don't specify the parameter at all, since `false` is the default value):
 
-```C#
+```csharp
 splashScreen.Show(autoClose: false, topMost: false);
 ```
 
@@ -264,7 +264,7 @@ The second issue – ensuring our splash stays on top even as application window
 
 Ultimately I settled on the simplest possible thing I could get to work:
 
-```C#
+```csharp
 splashForegroundTimer = new DispatcherTimer(DispatcherPriority.Normal);
 splashForegroundTimer.Interval = TimeSpan.FromMilliseconds(10);
 splashForegroundTimer.Tick += delegate

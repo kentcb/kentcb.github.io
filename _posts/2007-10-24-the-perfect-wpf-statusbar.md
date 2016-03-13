@@ -11,7 +11,7 @@ The simplest status bar is straightforward and looks just fine:
 
 The markup for this is:
 
-```XML
+```xml
 <StatusBar>
     <StatusBarItem>
         <TextBlock>Ready</TextBlock>
@@ -21,7 +21,7 @@ The markup for this is:
 
 Now suppose you want to add a second panel (I wanted more, but I'll get to that). You might try:
 
-```XML
+```xml
 <StatusBar>
     <StatusBarItem>
         <TextBlock>Ready</TextBlock>
@@ -38,7 +38,7 @@ But this may not render how you were expecting:
 
 Typically you would want the left-most panel to stretch. Turns out the `StatusBarItem`s are hosted in a `DockPanel`, so you can do this just by setting the `Dock` property on the right panel:
 
-```XML
+```xml
 <StatusBar>
     <StatusBarItem DockPanel.Dock="Right">
         <TextBlock>Set</TextBlock>
@@ -59,7 +59,7 @@ We need more control over how the `StatusBarItem`s are arranged. The key to this
 
 For the ultimate control, I opted to use a `Grid`, WPF's swiss army knife panel. For example:
 
-```XML
+```xml
 <StatusBar>
     <StatusBar.ItemsPanel>
         <ItemsPanelTemplate>

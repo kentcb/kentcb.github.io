@@ -5,7 +5,7 @@ tags: [ ".NET", "Rx" ]
 ---
 Reactive Extensions includes a super useful class called `SerialDisposable`. The idea is you can assign any `IDisposable` to it and it automatically disposes of any previously assigned value. Suppose, for example, you have a need to create a `UIPopoverController` whenever some user interaction occurs:
 
-```C#
+```csharp
 private readonly SerialDisposable popoverDisposable = new SerialDisposable();
 private UIPopoverController searchPopover;
 
@@ -32,7 +32,7 @@ OK, so the example is contrived and incomplete but you get the point.
 
 When faced with this situation of either doubling-up on backing fields versus sprinkling the code with casts, I figured I'd just create a generic `SerialDisposable<T>` class instead:
 
-```C#
+```csharp
 namespace System.Reactive.Disposables
 {
     using System;
@@ -66,7 +66,7 @@ namespace System.Reactive.Disposables
 
 The upshot is that now we can just declare a single field of type `SerialDisposable<UIPopoverController>` and utilize that wherever relevant:
 
-```C#
+```csharp
 private readonly SerialDisposable<UIPopoverController> searchPopover = ...;
 
 private UIPopoverController SearchPopover

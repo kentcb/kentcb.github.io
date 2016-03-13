@@ -35,7 +35,7 @@ You can find a sample attached. In this sample, I've re-templated a `CheckBox` c
 
 For the full control template, check out the [attached sample]({{ page.assets }}TieredExperience.zip). However, this outline gives you a taste for how things work:
 
-```XML
+```xml
 <local:TieredVisualStateManager x:Key="TieredVisualStateManager"/>
      
 <Style TargetType="CheckBox">

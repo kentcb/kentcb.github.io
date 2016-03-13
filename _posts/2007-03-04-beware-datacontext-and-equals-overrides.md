@@ -7,7 +7,7 @@ When binding to business or data objects in WPF, beware that WPF's `System.Windo
 
 If your object (or one of its ancestors) overrides `Equals()` to use something other than reference equality semantics you need to be careful when re-assigning to `DataContext`. Suppose you have this business class:
 
-```C#
+```csharp
 public sealed class Student : INotifyPropertyChanged
 {
     private readonly int _id;
@@ -39,7 +39,7 @@ public sealed class Student : INotifyPropertyChanged
 
 Note in particular that the `Student` class overrides `Equals()` such that two `Student` instances are considered equal if their IDs are equal. Now suppose you have a `StudentView` user control that binds to a `Student` instance:
 
-```XML
+```xml
 <UserControl x:Class="BindingTest.StudentView"
     xmlns=http://schemas.microsoft.com/winfx/2006/xaml/presentation
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
@@ -60,7 +60,7 @@ Assuming that you re-use an instance of `StudentView` instead of recreating a ne
 
 The easiest way to fix this problem is to assign `null` to `DataContext` before assigning the new `Student`:
 
-```C#
+```csharp
 studentView.DataContext = null;
 studentView.DataContext = someStudent;
 ```

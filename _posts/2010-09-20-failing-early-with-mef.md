@@ -16,7 +16,7 @@ More often than not, I had just forgotten to add the appropriate metadata to my 
 
 I came up with this:
 
-```C#
+```csharp
 private static void VerifyComposition()
 {
 #if DEBUG

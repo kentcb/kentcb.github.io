@@ -6,7 +6,7 @@ tags: [ "C#", "TPL" ]
 
 Sometimes when calling an asynchronous method, it can be useful to throw away the resultant `Task`. Generally this is a bad idea and can be resolved by a change in design, but just occasionally it's genuinely useful. However, if we do invoke an asynchronous method and discard the returned `Task`, the compiler issues a warning. This code, for example:
 
-```C#
+```csharp
 public SomeViewModel()
 {
 	this.InitializeAsync();
@@ -25,7 +25,7 @@ In this case we're in a constructor, so we cannot apply the `await` operator as 
 
 We could also wrap the invocation in a `#pragma`:
 
-```C#
+```csharp
 #pragma warning disable 4014
 
     this.InitializeAsync();
@@ -37,7 +37,7 @@ But this is both ugly and it lacks clarity. One needs to know what warning 4014 
 
 Instead of these options, I prefer to define my own `Ignore` extension method:
 
-```C#
+```csharp
 public static class TaskExtensions
 {
     public static void Ignore(this Task @this)
@@ -54,7 +54,7 @@ public static class TaskExtensions
 
 I can then use it as follows:
 
-```C#
+```csharp
 this
     .InitializeAsync()
     .Ignore();

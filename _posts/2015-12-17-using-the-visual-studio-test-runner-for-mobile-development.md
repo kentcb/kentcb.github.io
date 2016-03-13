@@ -27,7 +27,7 @@ Of course, I will always want to double-check things on the target platforms onc
 
 To solve this problem, we need to instigate the switch ourselves and swap in the binaries for .NET proper. The easiest way I could think of achieving this is by providing a configuration file for my test library and using assembly bindings:
 
-```XML
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 
 <configuration>

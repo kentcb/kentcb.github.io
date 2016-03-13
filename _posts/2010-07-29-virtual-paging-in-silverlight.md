@@ -27,13 +27,13 @@ I then have a collection view called `LazyAsyncCollectionView<T>`. This is an ab
 
 The view needs to be aware of the fact that it's bound to an `AsyncLazy<T>` rather than a `T`. Ergo, bindings look like this:
 
-```XML
+```xml
 <TextBlock Text="{Binding Value.Property}"/>
 ```
 
 where `Value` is the aforementioned property on `AsyncLazy<T>`. If you have a lot of properties and you don't like dereferencing `Value` all the time, you could bind a container's `DataContext` like this:
 
-```XML
+```xml
 <StackPanel DataContext="{Binding Value}">
     <TextBlock Text="{Binding SomeProperty}"/>
     <TextBlock Text="{Binding SomeOtherProperty}"/>

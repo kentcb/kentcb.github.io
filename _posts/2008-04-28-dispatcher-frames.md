@@ -13,7 +13,7 @@ You can think of a `DispatcherFrame` as something that forces operations to be p
 
 At times it can be useful to pump operations until some condition of your own is met. Perhaps your code is executing on the UI thread and you want to empty the queue of operations in the `Dispatcher` to force control and screen updates. In the Winforms world, this is achieved via a call to `Application.DoEvents()`. In WPF, there is no equivalent method, but we can easily simulate one:
 
-```C#
+```csharp
 public static void DoEvents(this Application application)
 {
     DispatcherFrame frame = new DispatcherFrame();
@@ -33,7 +33,7 @@ The above code is part of a small demo project, which you can [download here]({{
 
 A `DoEvents()` implementation is nice for illustrating the utility of `DispatcherFrame`s (indeed it is used in the MSDN documentation too), but I believe it is unnecessary. As you can see in the demo, it is possible to simulate `DoEvents()` in a much simpler fashion: by synchronously adding a low-priority no-op to the `Dispatcher`'s queue:
 
-```C#
+```csharp
 public static void DoEvents(this Application application)
 {
     Dispatcher.CurrentDispatcher.Invoke(DispatcherPriority.Background, new VoidHandler(() => { }));
@@ -50,7 +50,7 @@ I recently had need for one at my day job. We have a splash screen that usually 
 
 The splash presenter tries as hard as it can not to ask the user (if they only have one catalog, or it has been specified via a command line switch then it doesn't need to ask), but if it does need to, it delegates a call to the splash view on the UI thread. This call needs to return the catalog that the user selected. However, it has been called on the UI thread, so obtaining a catalog from the user requires pumping operations so they can select one from a list. The code looks like this:
 
-```C#
+```csharp
 public Catalog SelectCatalog(ICollection<Catalog> availableCatalogs)
 {
     StatusLabel = "Please select a catalog:";
@@ -66,7 +66,7 @@ public Catalog SelectCatalog(ICollection<Catalog> availableCatalogs)
 
 This method sets up the catalogs for the user to select from by assigning them to an `ItemsControl` (which renders each catalog as a hyperlink). It then pushes a new `DispatcherFrame`, which blocks until the frame is stopped. After the `DispatcherFrame` finishes, the selected catalog is returned. The only way to end the frame is by clicking on one of the hyperlinks representing the catalogs. Each hyperlink rendered by the `ItemsControl` has a Click handler as follows:
 
-```C#
+```csharp
 private void _hyperlink_Click(object sender, EventArgs e)
 {
     _selectedCatalog = (sender as Hyperlink).DataContext as Catalog;
