@@ -1,7 +1,7 @@
 ---
 title: Jason Smith&#39;s Xamarin Forms Performance Tips
 assets: /assets/2016-05-07-jason-smith's-xamarin-forms-performance-tips/
-tags: [ "Xaramin", "Xamarin.Forms" ]
+tags: [ "Xaramin", "Xamarin.Forms", "performance" ]
 ---
 Jason Smith, lead engineer of Xamarin Forms, gave a [great talk](https://www.youtube.com/watch?v=RZvdql3Ev0E) at this year's Evolve. He went through a long list of performance tips, as well as a Q&A session. I have not been able to find these tips in text format (slides, transcript, or blog post). In the interests of making this information more readily accessible to both me and others, I decided to summarize it here.
 
@@ -39,7 +39,7 @@ I've taken the liberty to rearrange and group related tips. But I want to be cle
 
 **DO** be aware of the `Spacing` (`ColumnSpacing`/`RowSpacing` for `Grid`) and `Padding` properties. Instead of this:
 
-```XML
+```xml
 <StackLayout>
     <ContentView Padding="10,10,10,5">
         <Label Text="1"/>
@@ -55,7 +55,7 @@ I've taken the liberty to rearrange and group related tips. But I want to be cle
 
 Do this:
 
-```XML
+```xml
 <StackLayout Padding="10" Spacing="5">
     <Label Text="1"/>
     <Label Text="2"/>
