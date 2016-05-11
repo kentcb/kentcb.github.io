@@ -43,3 +43,6 @@ defaults:
       type:         pages       # only pages though
     values:
       layout:       page
+
+gems:
+  - jekyll-seo-tag
