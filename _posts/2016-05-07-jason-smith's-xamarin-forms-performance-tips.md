@@ -16,9 +16,9 @@ I've taken the liberty to rearrange and group related tips. But I want to be cle
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 ```
 
-**DON'T** bind when static assignment suffices.
+**DO NOT** bind when static assignment suffices.
 
-**DON'T** assign default values. Doing so has a cost even though you're not modifying the value.
+**DO NOT** assign default values. Doing so has a cost even though you're not modifying the value.
 
 **AVOID** transparency. If you can achieve the same (or close enough) effect with full opacity, do so.
 
@@ -29,13 +29,13 @@ I've taken the liberty to rearrange and group related tips. But I want to be cle
 
 ## Layout
 
-**DON'T** use a `ContentView` with `Padding` just to apply a margin to the child. Instead, use the `Margin` property on the child (as of Xamarin.Forms 2.2).
+**DO NOT** use a `ContentView` with `Padding` just to apply a margin to the child. Instead, use the `Margin` property on the child (as of Xamarin.Forms 2.2).
 
-**DON'T** use a `StackLayout` to host a single child.
+**DO NOT** use a `StackLayout` to host a single child.
 
-**DON'T** use a `Grid` when a `StackLayout` suffices.
+**DO NOT** use a `Grid` when a `StackLayout` suffices.
 
-**DON'T** use multiple `StackLayout`s when a `Grid` suffices.
+**DO NOT** use multiple `StackLayout`s when a `Grid` suffices.
 
 **DO** be aware of the `Spacing` (`ColumnSpacing`/`RowSpacing` for `Grid`) and `Padding` properties. Instead of this:
 
@@ -67,9 +67,9 @@ Do this:
 
 **PREFER** star-sized grid columns/rows rather than auto-sized.
 
-**DON'T** use multiple `StackLayout`s to simulate a `Grid`.
+**DO NOT** use multiple `StackLayout`s to simulate a `Grid`.
 
-**DON'T** use `RelativeLayout` if at all possible.
+**DO NOT** use `RelativeLayout` if at all possible.
 
 **DO** pack children into the view before parents.
 
@@ -109,24 +109,24 @@ Note that XAML automatically packs in the correct order.
 
 **PREFER** animating views with the `TranslationX` and `TranslationY` properties as this avoids the need for layout.
 
-**DON'T** call `Layout()` (and especially `ForceLayout()`).
+**DO NOT** call `Layout()` (and especially `ForceLayout()`).
 
 **CONSIDER** creating a custom layout. This is likely the best choice if your layout is simple to describe in English but difficult to implement with stock layouts, if `AbsoluteLayout` _almost_ does what you want, or if you just need raw speed.
 
-**DON'T** use expression-based constraints in `RelativeLayout` (and per above, try not to use `RelativeLayout` at all).
+**DO NOT** use expression-based constraints in `RelativeLayout` (and per above, try not to use `RelativeLayout` at all).
 
-**DON'T** use a `StackLayout` inside a `ScrollView` to simulate a `ListView`.
+**DO NOT** use a `StackLayout` inside a `ScrollView` to simulate a `ListView`.
 
 **DO** use a `Grid` to achieve layering.
 
 
 ## Labels
 
-**DON'T** use multiple `Label`s when one will do (using spans with `FormattedText` if necessary).
+**DO NOT** use multiple `Label`s when one will do (using spans with `FormattedText` if necessary).
 
 **DO** disable `Label` wrapping if possible (`LineBreakMode="NoWrap"`).
 
-**DON'T** change the default `VerticalTextAlignment` for `Label`s unless necessary. The default removes an entire measure cycle.
+**DO NOT** change the default `VerticalTextAlignment` for `Label`s unless necessary. The default removes an entire measure cycle.
 
 **PREFER** the `VerticalTextAlignment` and `HorizontalTextAlignment` properties of `Label` over `VerticalOptions` and `HorizontalOptions`.
 
@@ -135,17 +135,17 @@ Note that XAML automatically packs in the correct order.
 
 ## ListViews
 
-**DON'T** put a `ListView` inside a `ScrollView`. Use the `ListView`s `Header` and `Footer` properties instead.
+**DO NOT** put a `ListView` inside a `ScrollView`. Use the `ListView`s `Header` and `Footer` properties instead.
 
-**DON'T** use `TableView` where you can use a `ListView`. Today, the only real reason to use a `TableView` is for settings-style UI where pretty much every cell has unique content.
+**DO NOT** use `TableView` where you can use a `ListView`. Today, the only real reason to use a `TableView` is for settings-style UI where pretty much every cell has unique content.
 
-**DO** use `ListViewCachingStrategy.RecycleCells` when you can. If it's not working, figure out why because it's worth it. This is _not_ the default.
+**DO** use `ListViewCachingStrategy.RecycleElement` when you can. If it's not working, figure out why because it's worth it. This is _not_ the default.
 
 **DO** use data template selectors to facilitate heterogeneous views within a single `ListView`. Don't override `OnBindingContextChanged` to update achieve the same effect.
 
 **AVOID** passing `IEnumerable<T>` as a data source to `ListView`s. Instead, try to use `IList<T>`.
 
-**DON'T** nest `ListView`s. Instead, use groups within a single `ListView`. Nesting is explicitly unsupported and will break your application.
+**DO NOT** nest `ListView`s. Instead, use groups within a single `ListView`. Nesting is explicitly unsupported and will break your application.
 
 **DO** use `HasUnevenRows` where your `ListView` has rows of differing sizes. If the content of the cell is modified dynamically (perhaps after loading it from the database), be sure to call `ForceUpdateSize()` on the cell.
 
@@ -170,12 +170,12 @@ Note that XAML automatically packs in the correct order.
 
 ## BindableProperty
 
-**DON'T** use the generic version of `BindableProperty.Create` (use the `string`-based version instead with C# 6's `nameof` operator).
+**DO NOT** use the generic version of `BindableProperty.Create` (use the `string`-based version instead with C# 6's `nameof` operator).
 
 
 ## CarouselPage
 
-**DON'T** use `CarouselPage`.
+**DO NOT** use `CarouselPage`.
 
 **DO** use a `CarouselView` within a `ContentPage`.
 
