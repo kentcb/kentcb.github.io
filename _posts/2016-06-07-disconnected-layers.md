@@ -6,7 +6,7 @@ tags: [ "Design", "C#", ".NET", "Xamarin" ]
 
 This post describes a technique I use in pretty much every non-trivial application I write these days. I call it a "disconnected layer". Essentially, it's an abstraction that allows you to quickly swap out your application's service layer. By flicking a switch, you can run your application against a simulated back-end.
 
-I pioneered this technique when I was working for a large investment banks (is there any other kind?). I was writing a WPF front-end for their FX traders. It had to connect to a large variety of back-end infrastructure. I realised that relying on all those back-end systems was going to be a pain point since they were in a constant state of flux.
+I pioneered this technique when I was working for large investment banks (is there any other kind?). I was writing a WPF front-end for their FX traders. It had to connect to a large variety of back-end infrastructure. I realised that relying on all those back-end systems was going to be a pain point since they were in a constant state of flux.
 
 These days I write mostly mobile applications and my reasons for implementing disconnected layers has shifted somewhat.
 
