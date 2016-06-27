@@ -167,7 +167,7 @@ private IRawWebApi CreateRawWebApi()
 {
 #if DISCONNECTED
     return new Services.Disconnected.RawWebApi(
-#if DISCONNECTED_FAST
+#if DISCONNECTED_DELAYS
         true,
 #else
         false,
