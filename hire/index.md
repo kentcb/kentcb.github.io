@@ -1,7 +1,7 @@
 ---
 layout: hire
 title: Xamarin, iOS, Android, Rx, RxUI Software Developer/Consultant (Adelaide, Australia)
-permalink: /hire/
+permalink: hire/
 categories: xamarin ios android developer consultant ux user-experience adelaide australia mono monotouch monodroid xamarin-forms xamarin-ios xamarin-android refit akavache reactive-extensions
 ---
 
