@@ -7,7 +7,7 @@ categories: csharp c# developer consultant adelaide australia
 
 Kent began working with C# when it was first released with .NET 1.0. Coming from a Java background, he found C# very intuitive and lacking some of the foibles of other languages he was experienced in. He has since used C# in a myriad of scenarios against a wide variety of platforms, including Windows, Linux, iOS and Android.
 
-Kent has many open source projects authored in C#, including [KBCsv](https://github.com/kentcb/KBCsv), [PCLMock](https://github.com/kentcb/PCLMock), and [Workout Wotch](https://github.com/kentcb/WorkoutWotch). And when he's not wielding C# in his own projects, he can often be found contributing C# code to other open source projects.
+Kent has many open source projects authored in C#, including [KBCsv](https://github.com/kentcb/KBCsv), [PCLMock](https://github.com/kentcb/PCLMock), and [Workout Wotch](https://github.com/kentcb/WorkoutWotch). And when he's not wielding C# in his own projects, he can often be found contributing to other open source projects.
 
 If you'd like to talk to Kent about making your C# project a success, you can contact him via [LinkedIn](http://www.linkedin.com/in/kent-boogaart-61951516) or [email](mailto:kent.boogaart@gmail.com).
 
