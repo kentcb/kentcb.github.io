@@ -3,9 +3,7 @@ param(
     [string]$title
 )
 
-Add-Type -AssemblyName "System.Web"
-
-$encodedTitle = [System.Web.HttpUtility]::HtmlEncode($title)
+$encodedTitle = [System.Uri]::EscapeDataString($title)
 $date = Get-Date -format "yyyy-MM-dd"
 $name = $date + "-" + $title.ToLowerInvariant().Replace(' ', '-').Replace('<', '').Replace('>', '')
 $postPath = "_posts/" + $name + ".md"
