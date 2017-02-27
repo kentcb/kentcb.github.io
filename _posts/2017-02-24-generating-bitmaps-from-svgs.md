@@ -1,5 +1,5 @@
 ---
-title: Generating%20Bitmaps%20from%20SVGs
+title: Generating Bitmaps from SVGs
 assets: /assets/2017-02-24-generating-bitmaps-from-svgs/
 tags: [ "xamarin", "mobile", "iOS", "Android", "UWP" ".net", "C#" ]
 ---
