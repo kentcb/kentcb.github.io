@@ -1,11 +1,11 @@
 ---
 title: Generating Bitmaps from SVGs
 assets: /assets/2017-02-24-generating-bitmaps-from-svgs/
-tags: [ "xamarin", "mobile", "iOS", "Android", "UWP" ".net", "C#" ]
+tags: [ "xamarin", "mobile", "iOS", "Android", "UWP", ".net", "C#" ]
 ---
 One of the more tedious and thankless tasks in mobile development is the management of bitmaps. Each platform has its own naming convention and its own set of supported scales. If you want your bitmaps to appear crisp on a wide array of devices, you'll soon be managing a dozen or so copies of each bitmap. This can quickly lead to frustration and mistakes that are difficult to catch (and it may well be your customers who find the problem).
 
-Some time ago, after struggling with this in a couple of projects, I set about concocting a solution. I wrote a C# script that automatically exports SVGs to each of the desired sizes, for each of the necessary platforms. With great flair of imagination, I named my script [_Generate.csx_](https://github.com/code-haeroes-pty-ltd/Generate).
+Some time ago, after struggling with this in a couple of projects, I set about concocting a solution. I wrote a C# script that automatically exports SVGs to each of the desired sizes, for each of the necessary platforms. With great flair of imagination, I named my script [_Generate.csx_](https://github.com/code-heroes-pty-ltd/Generate).
 
 Recently, Jonathan Dick of Xamarin released a tool called [Resizetizer](https://github.com/Redth/Resizetizer). It has similar goals to my script, but approaches the problem in a very different manner. Xamarin PM, Pierce Boggan, prompted me to write up some details on my solution, and this post is the result. Herein, I will compare my solution to Jonathan's.
 
@@ -61,6 +61,6 @@ If you want to try out _Generate.csx_ as a solution, here's some things to be aw
 
 Enjoy!
 
-[_Generate.csx_](https://github.com/code-haeroes-pty-ltd/Generate)
+[_Generate.csx_](https://github.com/code-heroes-pty-ltd/Generate)
 
 [Resizetizer](https://github.com/Redth/Resizetizer)
