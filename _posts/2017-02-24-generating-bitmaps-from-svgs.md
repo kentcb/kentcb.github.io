@@ -23,14 +23,14 @@ The next big difference between the tools is how you configure them. Resizetizer
 
 _Generate.csx_ is, in my opinion, far easier in this regard. For each image _type_ you need to support, you define a method that forwards onto `ExportItem`:
 
-```C#
+```csharp
 private static void ExportToolBarItem(string name) =>
     ExportItem(name, "toolbar item", 24, 22, 20);
 ```
 
 It is `ExportItem` that does the real work based on some simple parameters you supply it. Now, whenever you need a new toolbar item image, you simply add it to a list at the start of the script:
 
-```C#
+```csharp
 new[]
     {
         "hamburger",

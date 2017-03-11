@@ -11,7 +11,7 @@ As an interim until this problem is fixed in Xamarin.Forms, I thought I'd try ha
 
 The code is as follows:
 
-```C#
+```csharp
 [assembly: Xamarin.Forms.ExportRenderer(typeof(Xamarin.Forms.Page), typeof(UI.iOS.Renderers.HackedPageRenderer))]
 
 namespace UI.iOS.Renderers
