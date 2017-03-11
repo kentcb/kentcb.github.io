@@ -1,8 +1,7 @@
-
 ---
 title: Hacking Xamarin.Forms' Page.Appearing for iOS
 assets: /assets/2017-03-11-hacking-xamarin.forms-page.appearing-for-ios/
-tags: [ ]
+tags: [ "Xamarin", "Xamarin.Forms", "iOS", "ReactiveUI" ]
 ---
 It's no secret that Xamarin.Forms' lifecycle is terribly broken. See [here](https://forums.xamarin.com/discussion/84510/proposal-improved-life-cycle-support) and [here](https://bugzilla.xamarin.com/show_bug.cgi?id=52318) for details.
 
