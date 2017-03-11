@@ -7,7 +7,7 @@ It's no secret that Xamarin.Forms' lifecycle is terribly broken. See [here](http
 
 The biggest pain point I have day-to-day is that `Page.Appearing` fires too late on iOS. Instead of being triggered by `ViewWillAppear` as you'd expect, it is triggered by `ViewDidAppear`. This is a problem if you do any kind of view set-up in response to `Appearing` because your page will already be visible to the user. ReactiveUI users are particularly prone to this problem, since its activation-for-view-fetcher has no option _other_ than to use `Appearing`.
 
-As an interim until this problem is fixed in Xamarin.Forms, I thought I'd try hacking around it. After a couple of false starts, I decided the only viable option is to use reflection and knowledge of the default `PageRenderer` implementation. Such an approach allows us to trigger `Appearing` in response to `ViewWillAppear` and also prevent the default `PageRenderer` logic from triggering it _again_ in response to `ViewDidAppear`.
+As an interim solution until this problem is fixed in Xamarin.Forms, I thought I'd try hacking around it. After a couple of false starts, I decided the only viable option - other than having your own custom build of XF, which leads to more painful problems - is to use reflection and knowledge of the default `PageRenderer` implementation. Such an approach allows us to trigger `Appearing` in response to `ViewWillAppear` and also prevent the default `PageRenderer` logic from triggering it _again_ in response to `ViewDidAppear`.
 
 The code is as follows:
 
