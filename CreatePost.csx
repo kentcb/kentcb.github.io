@@ -14,8 +14,7 @@ var date = DateTime.Now.ToString("yyyy-MM-dd");
 var name = date + "-" + title.ToLowerInvariant().Replace(" ", "-").Replace("<", " ").Replace(">", " ").Replace(":", "");
 var postPath = "_posts/" + name + ".md";
 var assetsPath = "assets/" + name + "/";
-var postContents = $@"
----
+var postContents = $@"---
 title: {escapedTitle}
 assets: /{assetsPath}
 tags: [ ]
