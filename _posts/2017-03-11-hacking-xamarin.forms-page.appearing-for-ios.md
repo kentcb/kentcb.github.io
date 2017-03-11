@@ -3,6 +3,8 @@ title: Hacking Xamarin.Forms' Page.Appearing for iOS
 assets: /assets/2017-03-11-hacking-xamarin.forms-page.appearing-for-ios/
 tags: [ "Xamarin", "Xamarin.Forms", "iOS", "ReactiveUI" ]
 ---
+> **Note**  At the time of writing, the latest version of Xamarin.Forms is `2.3.4-pre4`. I will endeavour to update this post when the lifecycle issues are resolved.
+
 It's no secret that Xamarin.Forms' lifecycle is terribly broken. See [here](https://forums.xamarin.com/discussion/84510/proposal-improved-life-cycle-support) and [here](https://bugzilla.xamarin.com/show_bug.cgi?id=52318) for details.
 
 The biggest pain point I have day-to-day is that `Page.Appearing` fires too late on iOS. Instead of being triggered by `ViewWillAppear` as you'd expect, it is triggered by `ViewDidAppear`. This is a problem if you do any kind of view set-up in response to `Appearing` because your page will already be visible to the user. ReactiveUI users are particularly prone to this problem, since its activation-for-view-fetcher has no option _other_ than to use `Appearing`.
@@ -57,5 +59,6 @@ namespace UI.iOS.Renderers
     }
 }
 ```
-
 By including this in the iOS platform project for your Xamarin.Forms solution, your `Page.Appearing` events will now trigger from `ViewWillAppear`. Like I mentioned, this is particularly useful for ReactiveUI consumers, but frankly will help pretty much anyone doing XF+iOS.
+
+Other renderers (e.g. `NavigationRenderer` and `TabbedRenderer`) suffer from a similar issue, and can be hacked in much the same fashion on an as-need basis.
