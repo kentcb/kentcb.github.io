@@ -4,7 +4,7 @@ var args = Environment.GetCommandLineArgs();
 
 if (args.Length != 3)
 {
-    Console.WriteLine("Title required");
+    Console.WriteLine("Usage: csi ./CreatePost.csx \"Post title\"");
     return;
 }
 
