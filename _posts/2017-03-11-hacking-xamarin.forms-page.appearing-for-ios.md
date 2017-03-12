@@ -61,4 +61,4 @@ namespace UI.iOS.Renderers
 ```
 By including this in the iOS platform project for your Xamarin.Forms solution, your `Page.Appearing` events will now trigger from `ViewWillAppear`. Like I mentioned, this is particularly useful for ReactiveUI consumers, but frankly will help pretty much anyone doing XF+iOS.
 
-Other renderers (e.g. `NavigationRenderer` and `TabbedRenderer`) suffer from a similar issue, and can be hacked in much the same fashion on an as-need basis.
+Other renderers (e.g. `NavigationRenderer` and `TabbedRenderer`) suffer from the same issue, and can be hacked in much the same fashion on an as-need basis.
