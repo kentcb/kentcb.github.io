@@ -1,6 +1,6 @@
 ---
-title: Routing in ReactiveUI
-assets: /assets/2017-04-26-routing-in-reactiveui/
+title: Custom Routing in ReactiveUI
+assets: /assets/2017-04-26-custom-routing-in-reactiveui/
 tags: [ "ReactiveUI", "Xamarin.Forms", "C#", "routing" ]
 ---
 Out of the box, ReactiveUI provides some support for view model-first routing. A view model that implements `IScreen` manages a routing stack, where each view model within the stack implements `IRoutableViewModel`. In the view layer, a `RoutedViewHost` manifests a given routing stack using the idioms of the platform in question.
