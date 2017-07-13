@@ -1163,6 +1163,108 @@ var foo = new List<int>();
 List<int> foo = new List<int>();
 ```
 
+### dotnet_naming_*
+
+The `dotnet_naming_*` options are a special set of options that work somewhat differently to other options. They allow you to construct naming conventions in quite a flexible manner, though there are some annoying limitations (like not being able to stipulate _no_ prefix be allowed). However, only parts of the keys are fixed. Other parts you are free to name in whichever way you choose, allowing you to construct any number of naming rules. Here is an example:
+
+```
+# define a class of symbols that we name 'public_fields'
+dotnet_naming_symbols.public_fields.applicable_kinds = field
+dotnet_naming_symbols.public_fields.applicable_accessibilities = public
+
+# define a naming rule called 'public_fields_must_be_camel_case' that marries up the above symbol definition with the below style definition
+dotnet_naming_rule.public_fields_must_be_camel_case.severity = error
+dotnet_naming_rule.public_fields_must_be_camel_case.symbols = public_fields
+dotnet_naming_rule.public_fields_must_be_camel_case.style = camel_case
+
+# define a style called 'camel_case' that enforces camel casing
+dotnet_naming_style.camel_case.capitalization = camel_case
+```
+
+More examples can be found in the [sample _.editorconfig_ file](https://github.com/kentcb/EditorConfigReference).
+
+#### dotnet_naming_rule
+
+This is a key prefix used to define a naming rule. It takes the format `dotnet_naming_rule.$NAME.$SUBKEY`. The `$NAME` can be any string, and the `$SUBKEY` can be any of the subkeys listed below.
+
+##### dotnet_naming_rule.$NAME.severity
+
+Key: `dotnet_naming_rule.$NAME.severity`
+<br />
+Valid values: `none|silent|suggestion|warning|error`
+<br />
+
+##### dotnet_naming_rule.$NAME.style
+
+Key: `dotnet_naming_rule.$NAME.style`
+<br />
+Valid values: `(any style name you choose, to match up with a corresponding dotnet_naming_style block)`
+<br />
+
+##### dotnet_naming_rule.$NAME.symbols
+
+Key: `dotnet_naming_rule.$NAME.symbols`
+<br />
+Valid values: `(any symbol name you choose, to match up with a corresponding dotnet_naming_symbols block)`
+<br />
+
+#### dotnet_naming_style
+
+This is a key prefix used to define a naming style. It takes the format `dotnet_naming_style.$NAME.$SUBKEY`. The `$NAME` can be any string, and the `$SUBKEY` can be any of the subkeys listed below.
+
+##### dotnet_naming_style.$NAME.capitalization
+
+Key: `dotnet_naming_style.$NAME.capitalization`
+<br />
+Valid values: `pascal_case|camel_case|first_word_upper|all_upper|all_lower`
+<br />
+
+##### dotnet_naming_style.$NAME.required_prefix
+
+Key: `dotnet_naming_style.$NAME.required_prefix`
+<br />
+Valid values: `(any string)`
+<br />
+
+##### dotnet_naming_style.$NAME.required_suffix
+
+Key: `dotnet_naming_style.$NAME.required_suffix`
+<br />
+Valid values: `(any string)`
+<br />
+
+##### dotnet_naming_style.$NAME.word_separator
+
+Key: `dotnet_naming_style.$NAME.word_separator`
+<br />
+Valid values: `(any string)`
+<br />
+
+#### dotnet_naming_symbols
+
+This is a key prefix used to define naming symbols. It takes the format `dotnet_naming_symbols.$NAME.$SUBKEY`. The `$NAME` can be any string, and the `$SUBKEY` can be any of the subkeys listed below.
+
+##### dotnet_naming_symbols.$NAME.applicable_kinds
+
+Key: `dotnet_naming_style.$NAME.applicable_kinds`
+<br />
+Valid values: `class|struct|interface|enum|property|method|field|event|delegate|parameter`
+<br />
+
+##### dotnet_naming_symbols.$NAME.applicable_accessibilities
+
+Key: `dotnet_naming_style.$NAME.applicable_accessibilities`
+<br />
+Valid values: `*|public|internal|friend|private|protected|protected_internal|protected_friend`
+<br />
+
+##### dotnet_naming_symbols.$NAME.required_modifiers
+
+Key: `dotnet_naming_style.$NAME.required_modifiers`
+<br />
+Valid values: `abstract|must_inherit|async|const|readonly|static|shared`
+<br />
+
 ### dotnet_sort_system_directives_first
 
 Key: `dotnet_sort_system_directives_first`
