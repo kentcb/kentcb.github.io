@@ -282,7 +282,7 @@ public sealed class MainView : NavigationPage, IView
             .PopModalAsync()
             .ToObservable()
             .ToSignal()
-            // XF complete the pop operation on a background thread :/
+            // XF completes the pop operation on a background thread :/
             .ObserveOn(this.mainScheduler);
 
     public IObservable<Unit> PushPage(IPageViewModel pageViewModel, string contract, bool resetStack, bool animate)
@@ -346,7 +346,7 @@ public sealed class MainView : NavigationPage, IView
             .PopAsync(animate)
             .ToObservable()
             .ToSignal()
-            // XF complete the pop operation on a background thread :/
+            // XF completes the pop operation on a background thread :/
             .ObserveOn(this.mainScheduler);
 
     private Page LocatePageFor(object viewModel, string contract)
