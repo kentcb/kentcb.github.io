@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2017
+    * _Waking Up_ (Sam Harris)
     * _The Imposter's Handbook_ (Rob Conery)
     * _A Whole New Mind_ (Daniel Pink)
     * _Six Thinking Hats_ (Edward de Bono)
