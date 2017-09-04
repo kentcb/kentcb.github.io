@@ -7,7 +7,7 @@ tags: [ ".NET", "C#", ".editorConfig", "EditorConfig", "reference" ]
 
 If you've not heard of EditorConfig, it's a platform- and language-agnostic format to describe coding styles. Take a look at the [home page](http://editorconfig.org/) for more information.
 
-Recently, the Roslyn/.NET team added support for EditorConfig to Visual Studio. Consequenly, one can simply drop an _.editorconfig_ file alongside one's solution and have Visual Studio automatically point out any style problems in your code. Configuration is hierarchical, too, so if you place another _.editorconfig_ within a subfolder of your solution, those rules will apply therein, overriding any rules applied at a higher level.
+Recently, the Roslyn/.NET team added support for EditorConfig to Visual Studio. Consequently, one can simply drop an _.editorconfig_ file alongside one's solution and have Visual Studio automatically point out any style problems in your code. Configuration is hierarchical, too, so if you place another _.editorconfig_ within a subfolder of your solution, those rules will apply therein, overriding any rules applied at a higher level.
 
 Whilst this is an awesome direction to be taking the platform, there are several problems.
 
