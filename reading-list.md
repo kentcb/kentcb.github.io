@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2017
+    * _Pro .NET Performance_ (Dima Zurbalev, Ido Flatow, and Sasha Goldshtein)
     * _Waking Up_ (Sam Harris)
     * _The Imposter's Handbook_ (Rob Conery)
     * _A Whole New Mind_ (Daniel Pink)
