@@ -1123,10 +1123,10 @@ Supports code style option: yes
 
 ```csharp
 // csharp_style_var_elsewhere = true:error
-int foo = this.Foo();
+var foo = this.Foo();
 
 // csharp_style_var_elsewhere = false:error
-var foo = this.Foo();
+Foo foo = this.Foo();
 ```
 
 ### csharp_style_var_for_built_in_types
