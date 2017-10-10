@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2017
+    * _Hit Refresh_ (Satya Nadella)
     * _Joy, Inc._ (Richard Sheridan)
     * _Pro .NET Performance_ (Dima Zurbalev, Ido Flatow, and Sasha Goldshtein)
     * _Waking Up_ (Sam Harris)
