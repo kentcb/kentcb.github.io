@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2017
+    * _Conferences for Introverts_ (Alan Mendelevich)
     * _The Origin of (almost) Everything_ (Graham Lawton)
     * _Hit Refresh_ (Satya Nadella)
     * _Joy, Inc._ (Richard Sheridan)
