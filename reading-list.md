@@ -5,6 +5,8 @@ sidebar: true
 ---
 This is just a list of books I've read (starting late 2016), for my own record.
 
+* 2018
+    * _LaTeX Cookbook_ (Stefan Kottwitz)
 * 2017
     * _The Fast Diet_ (Michael Mosley and Mimi Spencer)
     * _Conferences for Introverts_ (Alan Mendelevich)
