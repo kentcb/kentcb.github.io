@@ -26,7 +26,7 @@ Complex user interfaces, without code complexity
 <li>Do you ever dream of writing the vast majority of your UI application code once, and then using that code to target totally unrelated platforms?</li>
 </ul>
 
-You, I, and ReactiveUI* is a comprehensive and enlightening book that will teach you how ReactiveUI can help solve all these problems and more. Beautifully typeset, and accompanied by an incredible set of code samples, it walks you through all of ReactiveUI's major features, describing how each can be used to level-up your .NET UI applications.
+You, I, and ReactiveUI is a comprehensive and enlightening book that will teach you how ReactiveUI can help solve all these problems and more. Beautifully typeset, and accompanied by an incredible set of code samples, it walks you through all of ReactiveUI's major features, describing how each can be used to level-up your .NET UI applications.
 </div>
 
 <!-- Book preview slideshow -->
