@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>You, I, and ReactiveUI</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link href="style.css" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link href="css/responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Preloader Start -->
+    <div id="preloader">
+        <div class="colorlib-load"></div>
+    </div>
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header_area animated">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <!-- Menu Area Start -->
+                <div class="col-12 col-lg-10">
+                    <div class="menu_area">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <!-- Logo -->
+                            <a class="navbar-brand" href="#">Kent Boogaart</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                            <!-- Menu Area -->
+                            <div class="collapse navbar-collapse" id="ca-navbar">
+                                <ul class="navbar-nav ml-auto" id="nav">
+                                    <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#screenshot">Screenshot</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Wellcome Area Start ***** -->
+    <section class="wellcome_area clearfix" id="home">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 col-md">
+                    <div class="wellcome-heading">
+                        <h2>You, I, and ReactiveUI</h2>
+                        <p>Complex user interfaces, without code complexity</p>
+                    </div>
+                    <div class="get-start-area">
+                        <!-- Form Start -->
+                        <form action="#" method="post" class="form-inline">
+                            <input type="submit" class="submit" value="BUY THIS BOOK">
+                        </form>
+                        <!-- Form End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Welcome thumb -->
+        <div class="welcome-thumb wow fadeInDown" data-wow-delay="0.5s">
+            <img src="img/bg-img/welcome-img.png" alt="">
+        </div>
+    </section>
+    <!-- ***** Wellcome Area End ***** -->
+
+    <!-- ***** Special Area Start ***** -->
+    <section class="special-area bg-white section_padding_100" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Section Heading Area -->
+                    <div class="section-heading text-center">
+                        <h2>Is this you?</h2>
+                        <div class="line-shape"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Single Special Area -->
+                <div class="col-12 col-md-4">
+                    <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="single-icon">
+                            <i class="ti-mobile" aria-hidden="true"></i>
+                        </div>
+                        <h4>State bugs</h4>
+                        <p>Have you ever chased a bug for hours, only to discover the root cause is an innocuous looking piece of state?</p>
+                    </div>
+                </div>
+                <!-- Single Special Area -->
+                <div class="col-12 col-md-4">
+                    <div class="single-special text-center wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="single-icon">
+                            <i class="ti-ruler-pencil" aria-hidden="true"></i>
+                        </div>
+                        <h4>Asynchronous spaghetti</h4>
+                        <p>Do you ever wonder whether there's a sane, elegant way to write code that ties together wildly disparate asynchronous data sources?</p>
+                    </div>
+                </div>
+                <!-- Single Special Area -->
+                <div class="col-12 col-md-4">
+                    <div class="single-special text-center wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="single-icon">
+                            <i class="ti-settings" aria-hidden="true"></i>
+                        </div>
+                        <h4>Test tantrums</h4>
+                        <p>Have you ever guiltily omitted unit tests for time-sensitive code, simply because it was too hard to test?</p>
+                    </div>
+                </div>
+                <!-- Single Special Area -->
+                <div class="col-12 col-md-4">
+                    <div class="single-special text-center wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="single-icon">
+                            <i class="ti-settings" aria-hidden="true"></i>
+                        </div>
+                        <h4>Copy+paste code reuse</h4>
+                        <p>Do you ever dream of writing the vast majority of your UI application code once, and then using that code to target totally unrelated platforms?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Special Area End ***** -->
+
+    <!-- ***** Awesome Features Start ***** -->
+    <section class="awesome-feature-area bg-white section_padding_0_50 clearfix" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Heading Text -->
+                    <div class="section-heading text-center">
+                        <h2>What you'll get from this book</h2>
+                        <div class="line-shape"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+                the most comprehensive and amazing set of code samples
+                beautiful typesetting
+            -->
+            <div class="row">
+                <!-- Single Feature Start -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-feature">
+                        <i class="ti-user" aria-hidden="true"></i>
+                        <h5>A new way of thinking</h5>
+                        <p>Learn ways of writing user interface code that is powerful, elegant, maintainable, and encapsulates the management of state.</p>
+                    </div>
+                </div>
+                <!-- Single Feature Start -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-feature">
+                        <i class="ti-pulse" aria-hidden="true"></i>
+                        <h5>Modern asynchrony</h5>
+                        <p>See how ReactiveUI makes it so much simpler for you to construct modern experiences that depend on a multitude of asynchronous events.</p>
+                    </div>
+                </div>
+                <!-- Single Feature Start -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-feature">
+                        <i class="ti-dashboard" aria-hidden="true"></i>
+                        <h5>No test left unturned</h5>
+                        <p>Discover how ReactiveUI can facilitate the testing of time-sensitive code, regardless of how long it would normally take to exercise in real-time.</p>
+                    </div>
+                </div>
+                <!-- Single Feature Start -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-feature">
+                        <i class="ti-palette" aria-hidden="true"></i>
+                        <h5>Source and binary code reuse</h5>
+                        <p>Understand how ReactiveUI's abstractions help you write user interface logic once, then run it on a wide array of platforms that have nothing in common apart from a .NET runtime.</p>
+                    </div>
+                </div>
+                <!-- Single Feature Start -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-feature">
+                        <i class="ti-palette" aria-hidden="true"></i>
+                        <h5>Samples, samples, samples</h5>
+                        <p>Learn about ReactiveUI features and techniques first-hand from the book discussion, then dive as deep as you like via the stunningly comprehensive set of code samples.</p>
+                    </div>
+                </div>
+                <!-- Single Feature Start -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="single-feature">
+                            <i class="ti-palette" aria-hidden="true"></i>
+                            <h5>Gorgeous typesetting</h5>
+                            <p>Experience all this in a delightful printed form, where meticulous attention to detail has resulted in a book you will be proud to display on your shelf.</p>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </section>
+    <!-- ***** Awesome Features End ***** -->
+
+    <!-- ***** App Screenshots Area Start ***** -->
+    <section class="app-screenshots-area bg-white section_padding_0_100 clearfix" id="screenshot">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <!-- Heading Text  -->
+                    <div class="section-heading">
+                        <h2>Book Screenshots</h2>
+                        <div class="line-shape"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <!-- App Screenshots Slides  -->
+                    <div class="app_screenshots_slides owl-carousel">
+                        <div class="single-shot">
+                            <img src="img/scr-img/book_preview1.png" alt="">
+                        </div>
+                        <div class="single-shot">
+                            <img src="img/scr-img/book_preview2.png" alt="">
+                        </div>
+                        <div class="single-shot">
+                            <img src="img/scr-img/book_preview3.png" alt="">
+                        </div>
+                        <div class="single-shot">
+                            <img src="img/scr-img/book_preview4.png" alt="">
+                        </div>
+                        <div class="single-shot">
+                            <img src="img/scr-img/book_preview5.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="app-screenshots-area bg-white section_padding_0_100 clearfix" id="screenshot">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <!-- Heading Text  -->
+                    <div class="section-heading">
+                        <h2>Sample Code Screenshots</h2>
+                        <div class="line-shape"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="app_screenshots_slides owl-carousel">
+                        <div class="single-shot">
+                            <img src="img/scr-img/sample_preview1.png" alt="">
+                        </div>
+                        <div class="single-shot">
+                            <img src="img/scr-img/sample_preview2.png" alt="">
+                        </div>
+                        <div class="single-shot">
+                            <img src="img/scr-img/sample_preview3.png" alt="">
+                        </div>
+                        <div class="single-shot">
+                            <img src="img/scr-img/sample_preview4.png" alt="">
+                        </div>
+                        <div class="single-shot">
+                            <img src="img/scr-img/sample_preview5.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** App Screenshots Area End *****====== -->
+
+    <!-- ***** Client Feedback Area Start ***** -->
+    <section class="clients-feedback-area bg-white section_padding_100 clearfix" id="testimonials">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10">
+                    <div class="slider slider-for">
+                        <!-- Client Feedback Text  -->
+                        <div class="client-feedback-text text-center">
+                            <div class="client">
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                            </div>
+                            <div class="client-description text-center">
+                                <p>“ !!!! this is lit !!!! ”</p>
+                            </div>
+                            <!-- <div class="star-icon text-center">
+                                <i class="ion-ios-star"></i>
+                                <i class="ion-ios-star"></i>
+                                <i class="ion-ios-star"></i>
+                                <i class="ion-ios-star"></i>
+                                <i class="ion-ios-star"></i>
+                            </div> -->
+                            <div class="client-name text-center">
+                                <h5>Geoffrey Huntley</h5>
+                            </div>
+                        </div>
+                        <div class="client-feedback-text text-center">
+                            <div class="client">
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                            </div>
+                            <div class="client-description text-center">
+                                <p>“ I'm finding myself check this tweet and account for news on the book. How long until we can order it Kent? ”</p>
+                            </div>
+                            <div class="client-name text-center">
+                                <h5>Glenn Stephens</h5>
+                            </div>
+                        </div>
+                        <!-- Client Feedback Text  -->
+                        <div class="client-feedback-text text-center">
+                            <div class="client">
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                            </div>
+                            <div class="client-description text-center">
+                                <p>“ Can’t wait to get a copy! ”</p>
+                            </div>
+                            <div class="client-name text-center">
+                                <h5>Colt Bauman</h5>
+                            </div>
+                        </div>
+                        <!-- Client Feedback Text  -->
+                        <div class="client-feedback-text text-center">
+                            <div class="client">
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                            </div>
+                            <div class="client-description text-center">
+                                <p>“ Congrats, and thank you for the hard work of writting a book on @ReactiveXUI Can't wait to get one. ”</p>
+                            </div>
+                            <div class="client-name text-center">
+                                <h5>Adrián Romero</h5>
+                            </div>
+                        </div>
+                        <!-- Client Feedback Text  -->
+                        <div class="client-feedback-text text-center">
+                            <div class="client">
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                            </div>
+                            <div class="client-description text-center">
+                                <p>“ I want one! :) ”</p>
+                            </div>
+                            <div class="client-name text-center">
+                                <h5>Cody Russell</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Client Thumbnail Area -->
+                <div class="col-12 col-md-6 col-lg-5">
+                    <div class="slider slider-nav">
+                        <div class="client-thumbnail">
+                            <img src="img/bg-img/GeoffreyHuntley.png" alt="">
+                        </div>
+                        <div class="client-thumbnail">
+                            <img src="img/bg-img/GlennStephens.png" alt="">
+                        </div>
+                        <div class="client-thumbnail">
+                            <img src="img/bg-img/ColtBauman.png" alt="">
+                        </div>
+                        <div class="client-thumbnail">
+                            <img src="img/bg-img/AdrianRomero.png" alt="">
+                        </div>
+                        <div class="client-thumbnail">
+                            <img src="img/bg-img/CodyRussell.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Client Feedback Area End ***** -->
+
+    <!-- ***** Footer Area Start ***** -->
+    <footer class="footer-social-icon text-center section_padding_70 clearfix">
+        <!-- Foooter Text-->
+        <div class="copyright-text">
+            <!-- ***** Removing this text is now allowed! This template is licensed under CC BY 3.0 ***** -->
+            <p>Copyright ©2017 Ca. Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+        </div>
+    </footer>
+    <!-- ***** Footer Area Start ***** -->
+
+    <!-- Jquery-2.2.4 JS -->
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap-4 Beta JS -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- All Plugins JS -->
+    <script src="js/plugins.js"></script>
+    <!-- Slick Slider Js-->
+    <script src="js/slick.min.js"></script>
+    <!-- Footer Reveal JS -->
+    <script src="js/footer-reveal.min.js"></script>
+    <!-- Active JS -->
+    <script src="js/active.js"></script>
+</body>
+
+</html>
