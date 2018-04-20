@@ -199,7 +199,7 @@ ol {
     font-size: 24px;
     right: 30px;
     width: 50px;
-    background-color: #fb397d;
+    background-color: #799FFF;
     color: #fff;
     text-align: center;
     height: 50px;
@@ -233,7 +233,7 @@ p {
 
 .section-heading > h2 {
     font-weight: 300;
-    color: #5b32b4;
+    color: #608DFF;
     font-size: 48px;
     margin: 0;
 }
@@ -247,7 +247,7 @@ p {
 .line-shape {
     width: 80px;
     height: 2px;
-    background-color: #fb397d;
+    background-color: #799FFF;
     margin-top: 15px;
 }
 
@@ -285,7 +285,7 @@ p {
     -webkit-animation: 2000ms linear 0s normal none infinite running colorlib-load;
     animation: 2000ms linear 0s normal none infinite running colorlib-load;
     background: transparent none repeat scroll 0 0;
-    border-color: #dddddd #dddddd #fb397d;
+    border-color: #dddddd #dddddd #799FFF;
     border-radius: 50%;
     border-style: solid;
     border-width: 2px;
@@ -333,7 +333,7 @@ p {
 }
 
 .menu_area .navbar-brand {
-    font-size: 72px;
+    font-size: 52px;
     font-weight: 700;
     color: #fff;
     margin: 0;
@@ -367,7 +367,7 @@ p {
 
 
 .menu_area nav ul li > a:hover {
-    color: #fb397d;
+    color: #799FFF;
 }
 
 .sing-up-button {
@@ -387,7 +387,7 @@ p {
 }
 
 .sing-up-button > a:hover {
-    background: #fb397d;
+    background: #799FFF;
     color: #fff;
     border-color: transparent;
     -webkit-transition-duration: 500ms;
@@ -398,7 +398,7 @@ p {
 /* stcicky css */
 
 .header_area.sticky {
-    background-color: #884bdf;
+    background-color: #3156B2;
     -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     height: 70px;
@@ -453,11 +453,11 @@ p {
 
 .welcome-thumb img {
     height: auto;
-    width: 324px;
+    width: 100%;
 }
 
 .wellcome-heading > h2 {
-    font-size: 100px;
+    font-size: 90px;
     color: #ffffff;
     font-weight: 700;
     position: relative;
@@ -500,13 +500,14 @@ p {
 }
 
 .get-start-area .submit {
-    background-color: #fb397d;
-    color: #fff;
+    background-color: #FFD160;
+    color: #000;
     font-weight: 500;
+    font-size: 22px;
     display: inline-block;
     border: none;
-    height: 50px;
-    min-width: 167px;
+    height: 75px;
+    min-width: 220px;
     line-height: 46px;
     text-align: center;
     border-radius: 24px 24px 24px 0px;
@@ -514,7 +515,7 @@ p {
 }
 
 .get-start-area .submit:hover {
-    background: #6f52e5;
+    background: #A49F93;
     color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -548,12 +549,12 @@ p {
 
 .single-icon > i {
     font-size: 36px;
-    color: #fb397d;
+    color: #799FFF;
 }
 
 .single-special > h4 {
     font-size: 22px;
-    color: #5b32b4;
+    color: #3156B2;
 }
 
 .single-icon {
@@ -562,7 +563,7 @@ p {
 
 .single-special > h4 {
     font-size: 22px;
-    color: #5b32b4;
+    color: #3156B2;
     margin-bottom: 15px;
 }
 
@@ -577,7 +578,7 @@ p {
 }
 
 .special_description_content > h2 {
-    color: #5b32b4;
+    color: #3156B2;
     font-size: 48px;
     margin-bottom: 30px;
 }
@@ -623,7 +624,7 @@ p {
 .app-download-btn.active a,
 .app-download-btn a:hover {
     border-color: transparent;
-    background-color: #fb397d;
+    background-color: #799FFF;
 }
 
 .app-download-btn a i {
@@ -672,7 +673,7 @@ p {
 }
 
 .single-feature > i {
-    color: #fb397d;
+    color: #799FFF;
     font-size: 30px;
     display: inline-block;
     float: left;
@@ -681,7 +682,7 @@ p {
 
 .single-feature > h5 {
     font-size: 22px;
-    color: #5b32b4;
+    color: #3156B2;
 }
 
 .single-feature > p {
@@ -720,7 +721,7 @@ p {
 .video-area .video-play-btn a {
     width: 80px;
     height: 80px;
-    background-color: #fb397d;
+    background-color: #799FFF;
     color: #fff;
     text-align: center;
     display: block;
@@ -830,7 +831,7 @@ p {
 }
 
 .app-screenshots-area .owl-dot.active {
-    background-color: #fb397d;
+    background-color: #799FFF;
     border: transparent;
 }
 
@@ -861,13 +862,13 @@ p {
 }
 
 .single-price-plan .package-plan > h5 {
-    color: #5b32b4;
+    color: #3156B2;
     font-size: 18px;
 }
 
 
 .single-price-plan .package-plan .ca-price h4 {
-    color: #fb397d;
+    color: #799FFF;
     font-size: 48px;
     position: relative;
     z-index: 1;
@@ -877,7 +878,7 @@ p {
 
 .single-price-plan .package-plan .ca-price span {
     font-size: 18px;
-    color: #fb397d;
+    color: #799FFF;
 }
 
 .single-price-plan .plan-button > a {
@@ -922,7 +923,7 @@ p {
 -------------------------- */
 
 .clients-feedback-area .client-name > h5 {
-    color: #5b32b4;
+    color: #3156B2;
     font-size: 22px;
     margin-top: 5px;
 }
@@ -941,7 +942,7 @@ p {
 
 .clients-feedback-area .client > i {
     font-size: 48px;
-    color: #897ceb;
+    color: #608DFF;
     margin-bottom: 30px;
 }
 
@@ -973,8 +974,8 @@ p {
 }
 
 .clients-feedback-area .slick-dots li.slick-active button {
-    background-color: #fb397d;
-    border-color: #fb397d;
+    background-color: #799FFF;
+    border-color: #799FFF;
 }
 
 .clients-feedback-area .slick-slide.client-thumbnail {
@@ -1060,13 +1061,13 @@ p {
     display: inline-block;
     text-align: center;
     line-height: 45px;
-    color: #fb397d;
+    color: #799FFF;
     font-weight: 500;
     border-radius: 23px 23px 23px 0;
 }
 
 .get-started-button > a:hover {
-    background: #5b32b4;
+    background: #3156B2;
     color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -1094,7 +1095,7 @@ p {
 
 .member-text > h4 {
     font-size: 22px;
-    color: #5b32b4;
+    color: #3156B2;
 }
 
 .member-text > p {
@@ -1171,7 +1172,7 @@ p {
 .address-text > p > span,
 .phone-text > p > span,
 .email-text > p > span {
-    color: #5b32b4;
+    color: #3156B2;
 }
 
 .footer-contact-area .line-shape {
@@ -1203,7 +1204,7 @@ p {
 }
 
 .btn.submit-btn {
-    background: #fb397d;
+    background: #799FFF;
     height: 48px;
     min-width: 185px;
     color: #ffffff;
@@ -1212,7 +1213,7 @@ p {
 }
 
 .btn.submit-btn:hover {
-    background: #5b32b4;
+    background: #3156B2;
     color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -1232,7 +1233,7 @@ p {
 -------------------------- */
 
 .footer-text > h2 {
-    color: #5b32b4;
+    color: #3156B2;
     font-size: 72px;
     font-weight: 700;
 }
@@ -1250,7 +1251,7 @@ p {
 }
 
 .footer-social-icon > a > i:hover {
-    background: #fb397d;
+    background: #799FFF;
     color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -1277,7 +1278,7 @@ p {
 }
 
 .footer-social-icon > a .active {
-    background: #fb397d;
+    background: #799FFF;
 }
 
 .footer-menu ul li:last-child a {
