@@ -4,7 +4,6 @@ title: You, I, and ReactiveUI
 redirect_from:
   - /book/
 ---
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
