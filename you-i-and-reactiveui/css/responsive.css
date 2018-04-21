@@ -72,6 +72,13 @@
     .wellcome-heading > p {
         font-size: 35px;
     }
+    .wellcome_area {
+        height: 500px;
+    }
+    .welcome-thumb img {
+        width: 60%;
+        margin-left: 100px;
+    }
     .single-special {
         padding: 30px 10px;
     }
@@ -158,6 +165,13 @@
     .wellcome-heading > p {
         font-size: 15px;
     }
+    .wellcome_area {
+        height: 300px;
+    }
+    .welcome-thumb img {
+        width: 60%;
+        margin-left: 100px;
+    }
     .get-start-area .email {
         margin-bottom: 20px;
         max-width: 100%;
@@ -238,30 +252,5 @@
     }
     .cool_facts_area .col-12:last-of-type .single-cool-fact {
         margin-bottom: 0;
-    }
-}
-
-@media (min-width: 480px) and (max-width: 767px) {
-    .wellcome-heading > h2 {
-        font-size: 40px;
-    }
-    .wellcome-heading > p {
-        font-size: 20px;
-    }
-    .wellcome-heading > h3 {
-        font-size: 284px;
-    }
-    .welcome-thumb {
-        bottom: -109px;
-        width: 75%;
-    }
-    .wellcome-heading {
-        margin-bottom: 50px;
-    }
-    .wellcome-heading > h3 {
-        top: -139px;
-    }
-    .get-start-area .email {
-        max-width: 370px;
     }
 }
