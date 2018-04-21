@@ -12,6 +12,12 @@
         line-height: 36px;
         font-size: 14px;
     }
+    .wellcome-heading > h2 {
+        font-size: 80px;
+    }
+    .wellcome-heading > p {
+        font-size: 45px;
+    }
     .welcome-thumb {
         width: 50%;
         bottom: -100px;
@@ -59,6 +65,12 @@
     }
     .wellcome-heading {
         margin-bottom: 70px;
+    }
+    .wellcome-heading > h2 {
+        font-size: 65px;
+    }
+    .wellcome-heading > p {
+        font-size: 35px;
     }
     .single-special {
         padding: 30px 10px;
@@ -141,7 +153,10 @@
         font-size: 14px;
     }
     .wellcome-heading > h2 {
-        font-size: 48px;
+        font-size: 25px;
+    }
+    .wellcome-heading > p {
+        font-size: 15px;
     }
     .get-start-area .email {
         margin-bottom: 20px;
@@ -153,7 +168,7 @@
         right: 0;
     }
     .logo_area > a > h2 {
-        font-size: 40px;
+        font-size: 20px;
         margin-top: 10px;
     }
     .section-heading > h2 {
@@ -227,11 +242,14 @@
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
+    .wellcome-heading > h2 {
+        font-size: 40px;
+    }
+    .wellcome-heading > p {
+        font-size: 20px;
+    }
     .wellcome-heading > h3 {
         font-size: 284px;
-    }
-    .wellcome-heading > h2 {
-        font-size: 70px;
     }
     .welcome-thumb {
         bottom: -109px;
@@ -245,14 +263,5 @@
     }
     .get-start-area .email {
         max-width: 370px;
-    }
-}
-
-@media (min-width: 576px) and (max-width: 767px) {
-    .wellcome-heading > h3 {
-        font-size: 286px;
-    }
-    .get-start-area .email {
-        margin-bottom: 0;
     }
 }

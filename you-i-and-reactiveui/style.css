@@ -425,7 +425,7 @@ p {
 
 .wellcome_area {
     background-image: url(img/bg-img/welcome-bg.png);
-    height: 900px;
+    height: 600px;
     position: relative;
     z-index: 1;
     background-position: bottom center;
@@ -458,6 +458,7 @@ p {
 
 .wellcome-heading > h2 {
     font-size: 90px;
+    font-variant: small-caps;
     color: #ffffff;
     font-weight: 700;
     position: relative;
@@ -524,7 +525,7 @@ p {
 
 .wellcome-heading > p {
     color: #fff;
-    font-size: 24pt;
+    font-size: 35pt;
 }
 
 .wellcome-heading > h3 {
