@@ -19,9 +19,12 @@
         font-size: 45px;
     }
     .welcome-thumb {
-        width: 50%;
-        bottom: -100px;
-        right: 50px;
+        width: 30%;
+        bottom: -4%;
+        right: 0;
+    }
+    .welcome-thumb img {
+        width: 60%;
     }
     .video-area {
         height: 550px;
@@ -59,9 +62,12 @@
         text-align: left;
     }
     .welcome-thumb {
-        width: 50%;
-        bottom: -100px;
+        width: 30%;
+        bottom: -4%;
         right: 0;
+    }
+    .welcome-thumb img {
+        width: 60%;
     }
     .wellcome-heading {
         margin-bottom: 70px;
@@ -74,10 +80,6 @@
     }
     .wellcome_area {
         height: 500px;
-    }
-    .welcome-thumb img {
-        width: 60%;
-        margin-left: 100px;
     }
     .single-special {
         padding: 30px 10px;
@@ -129,7 +131,101 @@
     }
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 420px) and (max-width: 767px) {
+    .header_area {
+        padding: 0;
+    }
+    .menu_area .navbar-brand {
+        font-size: 48px;
+    }
+    .header_area.sticky {
+        height: 50px;
+    }
+    .header_area .menu_area #nav .nav-link,
+    .header_area.sticky .menu_area #nav .nav-link {
+        padding: 7.5px 15px;
+    }
+    #ca-navbar {
+        padding: 30px;
+        border-radius: 3px;
+        background-color: #608DFF;
+        text-align: left;
+    }
+    .sing-up-button {
+        margin-top: 30px;
+        text-align: left;
+    }
+    .welcome-thumb {
+        width: 30%;
+        bottom: -4%;
+        right: 0;
+    }
+    .welcome-thumb img {
+        width: 60%;
+    }
+    .wellcome-heading {
+        margin-bottom: 70px;
+    }
+    .wellcome-heading > h2 {
+        font-size: 40px;
+    }
+    .wellcome-heading > p {
+        font-size: 20px;
+    }
+    .wellcome_area {
+        height: 330px;
+    }
+    .single-special {
+        padding: 30px 10px;
+    }
+    .special_description_area.mt-150 {
+        margin-top: 50px;
+    }
+    .special_description_content > h2 {
+        font-size: 30px;
+    }
+    .video-area {
+        height: 350px;
+    }
+    .section-heading > h2 {
+        font-size: 38px;
+    }
+    .address-text > p,
+    .phone-text > p,
+    .email-text > p {
+        font-size: 16px;
+    }
+    .footer-text > p {
+        margin-bottom: 30px;
+    }
+    .section-heading {
+        margin-bottom: 50px;
+    }
+    .sing-up-button > a {
+        margin-top: 4px;
+        display: inline-block;
+        border: 2px solid #a883e9;
+        height: 40px;
+        min-width: 160px;
+        line-height: 36px;
+        font-size: 14px;
+    }
+    .counter-area {
+        min-width: 50px;
+    }
+    .counter-area > h3 {
+        font-size: 30px;
+    }
+    .app_screenshots_slides {
+        padding: 0;
+    }
+    .clients-feedback-area .slick-slide.slick-current img {
+        width: 90px !important;
+        height: 90px !important;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 420px) {
     .header_area {
         padding: 0;
     }
@@ -169,7 +265,7 @@
         height: 300px;
     }
     .welcome-thumb img {
-        width: 60%;
+        display: none;
         margin-left: 100px;
     }
     .get-start-area .email {

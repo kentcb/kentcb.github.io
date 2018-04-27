@@ -444,9 +444,9 @@ p {
 }
 
 .welcome-thumb {
-    width: 45%;
+    width: 20%;
     position: absolute;
-    bottom: -130px;
+    bottom: -4%;
     right: 85px;
     z-index: 9;
 }
@@ -515,6 +515,7 @@ p {
     margin-left: 10px;
     padding-left: 20px;
     padding-right: 20px;
+    z-index: 100;
 }
 
 .get-start-area .submit:hover {
