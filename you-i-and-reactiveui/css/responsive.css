@@ -24,7 +24,7 @@
         right: 0;
     }
     .welcome-thumb img {
-        width: 60%;
+        width: 100%;
     }
     .video-area {
         height: 550px;
@@ -67,7 +67,7 @@
         right: 0;
     }
     .welcome-thumb img {
-        width: 60%;
+        width: 100%;
     }
     .wellcome-heading {
         margin-bottom: 70px;
@@ -161,7 +161,7 @@
         right: 0;
     }
     .welcome-thumb img {
-        width: 60%;
+        width: 100%;
     }
     .wellcome-heading {
         margin-bottom: 70px;
@@ -266,7 +266,6 @@
     }
     .welcome-thumb img {
         display: none;
-        margin-left: 100px;
     }
     .get-start-area .email {
         margin-bottom: 20px;
