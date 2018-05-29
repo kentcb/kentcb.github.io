@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2018
+    * _Doctor You_ (Jeremy Howick)
     * _Cracking Mathematics_ (Colin Beveridge)
     * _The Subtle Art of Not Giving a F*ck_ (Mark Manson)
     * _LaTeX Cookbook_ (Stefan Kottwitz)
