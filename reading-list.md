@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2018
+    * _Mistress of the Empire_ (Raymond Feist & Janny Wurts)
     * _Doctor You_ (Jeremy Howick)
     * _Cracking Mathematics_ (Colin Beveridge)
     * _The Subtle Art of Not Giving a F*ck_ (Mark Manson)
@@ -24,8 +25,8 @@ This is just a list of books I've read (starting late 2016), for my own record.
     * _Gut_ (Giulia Enders)
     * _Clean Code_ (Robert Martin)
     * _Smart Couples Finish Rich_ (David Bach)
-    * _Servant of the Empire_ (Raymond Feist)
-    * _Daughter of the Empire_ (Raymond Feist)
+    * _Servant of the Empire_ (Raymond Feist & Janny Wurts)
+    * _Daughter of the Empire_ (Raymond Feist & Janny Wurts)
     * _The King's Buccaneer_ (Raymond Feist)
     * _Prince of the Blood_ (Raymond Feist)
 
