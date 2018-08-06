@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2018
+    * _Shadow of a Dark Queen_ (Raymond Feist)
     * _Mistress of the Empire_ (Raymond Feist & Janny Wurts)
     * _Doctor You_ (Jeremy Howick)
     * _Cracking Mathematics_ (Colin Beveridge)
