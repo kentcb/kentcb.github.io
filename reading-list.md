@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2018
+    * _Agile Principles, Patterns, and Practices in C#_ - first, and half of second sections only (Robert C Martin, Micah Martin)
     * _Shards of a Broken Crown_ (Raymond Feist)
     * _Reactive Programming with RxJava_ (Tomasz Nurkiewicz & Ben Christensen)
     * _Rage of a Demon King_ (Raymond Feist)
