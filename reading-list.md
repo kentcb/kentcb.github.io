@@ -5,6 +5,8 @@ sidebar: true
 ---
 This is just a list of books I've read (starting late 2016), for my own record.
 
+* 2019
+    * _The Way of Kings_ (Brandon Sanderson)
 * 2018
     * _The Martian_ (Andy Weir)
     * _Agile Principles, Patterns, and Practices in C#_ - first, and half of second sections only (Robert C Martin, Micah Martin)
