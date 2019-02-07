@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2019
+    * _Programming Microsoft Azure Service Fabric_ (Haishi Bai)
     * _The Way of Kings_ (Brandon Sanderson)
 * 2018
     * _The Martian_ (Andy Weir)
