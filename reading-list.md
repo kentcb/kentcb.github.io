@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2019
+    * _.NET Microservices: Architecture for Containerized .NET Applications_ (Cesar de la Torre, Bill Wagner, Mike Rousos)
     * _The Tao of Microservices_ (Richard Rodger)
     * _Programming Microsoft Azure Service Fabric_ (Haishi Bai)
     * _The Way of Kings_ (Brandon Sanderson)
