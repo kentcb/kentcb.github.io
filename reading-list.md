@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2019
+    * _Designing Data-Intensive Applications_ (Martin Kleppmann)
     * _Meet Your Bacteria_ (Nicola Temple, Catherine Whitlock)
     * _Words of Radiance_ (Brandon Sanderson)
     * _.NET Microservices: Architecture for Containerized .NET Applications_ (Cesar de la Torre, Bill Wagner, Mike Rousos)
