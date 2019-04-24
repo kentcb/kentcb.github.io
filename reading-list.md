@@ -6,6 +6,8 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2019
+    * _The Kubernetes Book_ (Nigel Poulton)
+    * _Docker Deep Dive_ (Nigel Poulton)
     * _Designing Data-Intensive Applications_ (Martin Kleppmann)
     * _Meet Your Bacteria_ (Nicola Temple, Catherine Whitlock)
     * _Words of Radiance_ (Brandon Sanderson)
