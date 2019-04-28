@@ -1,8 +1,8 @@
 ---
 layout: hire
-title: Reactive Extensions Senior Software Developer/Consultant (Adelaide, Australia)
-permalink: hire/reactive-extensions-senior-software-developer-consultant-adelaide-australia.html
-categories: reactive-extensions rx c# developer consultant adelaide australia
+title: Reactive Extensions Senior Software Developer/Consultant (Brisbane, Australia)
+permalink: hire/reactive-extensions-senior-software-developer-consultant-brisbane-australia.html
+categories: reactive-extensions rx c# developer consultant brisbane australia
 ---
 
 Kent's first foray into reactive programming was in the area of finance. He was wrestling with a complicated, composite, WPF application, trying to tame the complexity that had crept into the implementation. Recognising that Reactive Extensions might help, he first studied it and applied it to various toy scenarios. Thereafter, he was able to apply it effectively to the real system, drammatically simplifying the code and improving its robustness at the same time.

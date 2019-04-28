@@ -47,7 +47,7 @@ Note in particular that the `Student` class overrides `Equals()` such that two `
         <StackPanel Orientation="Horizontal">
             <Label>ID:</Label>
             <Label Content="{Binding Id}"/>
-        </StackPanel> 
+        </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label>Name:</Label>
             <TextBox Text="{Binding Name}"/>

@@ -1,8 +1,8 @@
 ---
 layout: hire
-title: Xamarin Forms Senior Software Developer/Consultant (Adelaide, Australia)
-permalink: hire/xamarin-forms-senior-software-developer-consultant-adelaide-australia.html
-categories: xamarin-forms xamarin c# developer consultant adelaide australia
+title: Xamarin Forms Senior Software Developer/Consultant (Brisbane, Australia)
+permalink: hire/xamarin-forms-senior-software-developer-consultant-brisbane-australia.html
+categories: xamarin-forms xamarin c# developer consultant brisbane australia
 ---
 
 In early 2012, Kent began his transition into mobile development. Intrigued by Xamarin and how it might allow him to leverage his C# skills in new areas, he threw himself head-first into the challenge. He wrote an entire application, [Workout Wotch](https://github.com/kentcb/WorkoutWotch), whilst recording the development process and publishing it on YouTube. Since then he has written mobile applications with Xamarin.Forms for many clients, targetting both iOS and Android.

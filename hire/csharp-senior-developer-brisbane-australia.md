@@ -1,8 +1,8 @@
 ---
 layout: hire
-title: C# Senior Software Developer/Consultant (Adelaide, Australia)
-permalink: hire/csharp-senior-software-developer-consultant-adelaide-australia.html
-categories: csharp c# developer consultant adelaide australia
+title: C# Senior Software Developer/Consultant (Brisbane, Australia)
+permalink: hire/csharp-senior-software-developer-consultant-brisbane-australia.html
+categories: csharp c# developer consultant brisbane australia
 ---
 
 Kent began working with C# when it was first released with .NET 1.0. Coming from a Java background, he found C# very intuitive and lacking some of the foibles of other languages he was experienced in. He has since used C# in a myriad of scenarios against a wide variety of platforms, including Windows, Linux, iOS and Android.

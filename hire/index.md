@@ -1,8 +1,8 @@
 ---
 layout: hire
-title: Xamarin, iOS, Android, Rx, RxUI Software Developer/Consultant (Adelaide, Australia)
+title: Xamarin, iOS, Android, Rx, RxUI Software Developer/Consultant (Brisbane, Australia)
 permalink: hire/
-categories: xamarin ios android developer consultant ux user-experience adelaide australia mono monotouch monodroid xamarin-forms xamarin-ios xamarin-android refit akavache reactive-extensions
+categories: xamarin ios android developer consultant ux user-experience brisbane australia mono monotouch monodroid xamarin-forms xamarin-ios xamarin-android refit akavache reactive-extensions
 ---
 
 A passionate developer from the beginning, Kent started developing in BASIC on his family's Amstrad CPC 6180. By the age of eleven, he was writing software in Z80 assembly. His professional career has exposed him to a wide range of languages and platforms, including C#, .NET, Java, and C++. He's worked in a wide variety of sectors, including agriculture, superannuation, and finance - with both Agile and traditional Waterfall methodologies.

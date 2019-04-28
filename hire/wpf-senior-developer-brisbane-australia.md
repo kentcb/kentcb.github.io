@@ -1,8 +1,8 @@
 ---
 layout: hire
-title: WPF Senior Software Developer/Consultant (Adelaide, Australia)
-permalink: hire/wpf-senior-software-developer-consultant-adelaide-australia.html
-categories: wpf developer consultant ux user-experience adelaide australia
+title: WPF Senior Software Developer/Consultant (Brisbane, Australia)
+permalink: hire/wpf-senior-software-developer-consultant-brisbane-australia.html
+categories: wpf developer consultant ux user-experience brisbane australia
 ---
 
 Kent began working with WPF when it was still in beta. His enthusiasm for providing users with intuitive and innovative solutions provided the initial impetus for investigating WPF. It didn't take long for him to develop a deep appreciation for the platform and its elegance. Within industries as varied as agriculture and finance, Kent has spear-headed the design and implementation of first-class WPF applications that deliver superior experiences to their users.
