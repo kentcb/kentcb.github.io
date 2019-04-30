@@ -3,11 +3,12 @@ title: About
 assets: /assets/about/
 sidebar: true
 ---
-Father of two, husband of one, writer of code, drummer of drums, reader of books, pursuer of truth. Australian and British, both.
+Father of two, husband of one, writer of code, drummer of drums, <a href="{{ site.baseurl }}/reading-list">reader of books</a>, <a href="{{ site.baseurl }}/you-i-and-reactiveui/">writer of book</a>, pursuer of truth. Australian and British, both.
 
-* kent.boogaart (at) gmail.com
-* [@kent_boogaart](https://twitter.com/kent_boogaart)
-* [Stackoverflow Profile](http://stackoverflow.com/users/5380/kent-boogaart)
-* [GitHub Profile](https://github.com/kentcb)
-* [CodePlex Profile](http://www.codeplex.com/site/users/view/kentcb)
-* [MVP Profile](http://mvp.microsoft.com/en-us/mvp/Kent%20Cameron%20Boogaart-4025178)
+<ul style="list-style: none;">
+<li><span class="fas fa-envelope fa-sm"></span> kent.boogaart (at) gmail.com</li>
+<li><span class="fab fa-twitter"></span> <a href="https://twitter.com/kent_boogaart">@kent_boogaart</a></li>
+<li><span class="fab fa-stack-overflow"></span> <a href="http://stackoverflow.com/users/5380/kent-boogaart">Stackoverflow profile</a></li>
+<li><span class="fab fa-github"></span> <a href="https://github.com/kentcb">GitHub profile</a></li>
+<li><span class="fab fa-microsoft"></span> <a href="http://mvp.microsoft.com/en-us/mvp/Kent%20Cameron%20Boogaart-4025178">Microsoft MVP profile</a></li>
+</ul>
