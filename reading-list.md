@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2019
+    * _LaTeX: A Document Preparation System_ (Leslie Lamport)
     * _The Fatigue and Fibromyalgia Solution_ (Jacob Teitelbaum M.D.)
     * _At Home_ (Bill Bryson)
     * _The Kubernetes Book_ (Nigel Poulton)
