@@ -1,0 +1,19 @@
+ /* Callout box - fixed position at the bottom of the page */
+ .callout {
+    margin-bottom: 20px;
+  }
+
+  /* Callout header */
+  .callout-header {
+    padding: 15px;
+    background: #FF8821;
+    font-size: 30px;
+    color: white;
+  }
+
+  /* Callout container/body */
+  .callout-container {
+    padding: 15px;
+    background-color: #FFCCA3;
+    color: black
+  }
