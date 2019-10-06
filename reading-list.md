@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2019
+    * _Principles_ (Ray Dalio)
     * _Essential Skills for Scale Modelers_ (Aaron Skinner)
     * _Code_ (Charles Petzold)
     * _The Curious Incident of the Dog in the Night-Time_ (Mark Haddon)
