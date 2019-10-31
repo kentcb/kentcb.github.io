@@ -6,6 +6,9 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2019
+    * _A Plea for Lean Software_ (Charles Antony Richard Hoare)
+    * _The Emperor's Old Clothes_ (Niklaus Wirth)
+    * _Domain-Driven Design - Tackling Complexity in the Heart of Software_ (Eric Evans) [I skim-read the last couple of chapters]
     * _Principles_ (Ray Dalio)
     * _Essential Skills for Scale Modelers_ (Aaron Skinner)
     * _Code_ (Charles Petzold)
