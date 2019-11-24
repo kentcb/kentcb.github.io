@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2019
+    * _The Soul of a New Machine_ (Tracy Kidder)
     * _Lost Connections - Uncovering the Real Causes of Depression - and the Unexpected Solutions_ (Johann Hari)
     * _Domain-Drive Design Reference - Definitions and Pattern Summaries_ (Eric Evans)
     * _A Plea for Lean Software_ (Charles Antony Richard Hoare)
