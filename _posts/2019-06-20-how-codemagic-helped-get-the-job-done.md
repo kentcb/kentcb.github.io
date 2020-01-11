@@ -48,6 +48,8 @@ echo "  flutter:" >> ./pubspec.yaml
 echo "    sdk: flutter" >> ./pubspec.yaml
 ```
 
+**UPDATE 11th January, 2020:** Codemagic no longer requires this hack to build a non-Flutter project. But note that your scripts will only run if the corresponding step runs. You can see which steps are executed in the log.
+
 As a rule, I try to keep as much of my automation in my own code base rather than embedding it into the configuration of a third party tool like Bitrise or Codemagic. This is because it means I have a more complete history of its evolution alongside the code, and because it is far simpler to shift to another tool altogether (such as moving from Bitrise to Codemagic, or vice-versa). For that reason, I use [grinder](https://pub.dev/packages/grinder) scripts to do a bunch of auxiliary work around my builds such as:
 
 * consistent versioning and release notes
