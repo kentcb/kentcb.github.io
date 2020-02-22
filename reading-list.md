@@ -5,6 +5,8 @@ sidebar: true
 ---
 This is just a list of books I've read (starting late 2016), for my own record.
 
+* 2020
+    * _All You Have to Do Is Ask: How to Master the Most Important Skill for Success_ (Wayne Baker)
 * 2019
     * _The Soul of a New Machine_ (Tracy Kidder)
     * _Lost Connections - Uncovering the Real Causes of Depression - and the Unexpected Solutions_ (Johann Hari)
