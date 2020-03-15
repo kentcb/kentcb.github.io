@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2020
+    * _Domain Modeling Made Functional_ (Scott Wlaschin)
     * _Get Programming with F#_ (Isaac Abraham)
     * _All You Have to Do Is Ask: How to Master the Most Important Skill for Success_ (Wayne Baker)
 * 2019
