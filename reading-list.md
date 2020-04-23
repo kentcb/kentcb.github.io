@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2020
+    * _The Fifth Season_ (N.K. Jemisin)
     * _Difficult Conversations_ (Bruce Patton, Douglas Stone, Sheila Heen)
     * _Hello World_ (Hannah Fry)
     * _Oathbringer_ (Brandon Sanderson)
