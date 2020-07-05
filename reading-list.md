@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2020
+    * _OAuth 2 in Action_ (Justin Richer, Antonio Sanso)
     * _It's Not All About Me_ (Robert Dreeke)
     * _The Stone Sky_ (N.K. Jemisin) [I abandoned this half-way through]
     * _The Obelisk Gate_ (N.K. Jemisin)
