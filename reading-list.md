@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2020
+    * _Tamed_ (Alice Roberts)
     * _Work With Me_ (Simon Dowling)
     * _The Happiness Advantage_ (Shawn Anchor)
     * _How to Invent Everything_ (Ryan North)
