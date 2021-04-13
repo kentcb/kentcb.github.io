@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2021
+    * _Fighting Fatigue_ (Sue Pemberton, Catherine Berry)
     * _Traction_ (Gabriel Weinberg, Justin Mares)
     * _The Final Empire_ (Brandon Sanderson)
 * 2020
