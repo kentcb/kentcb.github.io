@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2021
+    * _Shadows of Self_ (Brandon Sanderson)
     * _Expert F#_ (Don Syme, Adam Granicz, Antonio Cisternino)
     * _Alloy of Law_ (Brandon Sanderson)
     * _The Hero of Ages_ (Brandon Sanderson)
