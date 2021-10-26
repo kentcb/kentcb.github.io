@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2021
+    * _Breath: The New Science of a Lost Art_ (James Nestor)
     * _The Holistic Rx_ (Madiha Saeed)
     * _The Mind Strength Method_ (Jodie Lowinger)
     * _The Bands of Mourning_ (Brandon Sanderson)
