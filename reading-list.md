@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2021
+    * _Think Again_ (Adam Grant)
     * _Fast This Way_ (Dave Asprey)
     * _Breath: The New Science of a Lost Art_ (James Nestor)
     * _The Holistic Rx_ (Madiha Saeed)
