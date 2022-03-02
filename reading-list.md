@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2022
+    * _Arcanum Unbounded_ (Brandon Sanderson)
     * _Healthy Home, Healthy Family_ (Nicole Bijlsma)
 * 2021
     * _Your Brain is Always Listening_ (Daniel G. Amen)
