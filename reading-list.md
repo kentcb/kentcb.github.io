@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2022
+    * _The Doctors Who Give No Medicine_ (Dr Jeffrey Hannah DC)
     * _Break the Mold_ (Dr Jill Crista)
     * _Arcanum Unbounded_ (Brandon Sanderson)
     * _Healthy Home, Healthy Family_ (Nicole Bijlsma)
@@ -14,7 +15,7 @@ This is just a list of books I've read (starting late 2016), for my own record.
     * _Think Again_ (Adam Grant)
     * _Fast This Way_ (Dave Asprey)
     * _Breath: The New Science of a Lost Art_ (James Nestor)
-    * _The Holistic Rx_ (Madiha Saeed)
+    * _The Holistic Rx_ (Madiha Saeed MD)
     * _The Mind Strength Method_ (Jodie Lowinger)
     * _The Bands of Mourning_ (Brandon Sanderson)
     * _Shadows of Self_ (Brandon Sanderson)
