@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2022
+    * _Project Hail Mary_ (Andy Weir)
     * _The Doctors Who Give No Medicine_ (Dr Jeffrey Hannah DC)
     * _Break the Mold_ (Dr Jill Crista)
     * _Arcanum Unbounded_ (Brandon Sanderson)
