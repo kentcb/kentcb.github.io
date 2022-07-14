@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2022
+    * _Everything is Fucked_ (Mark Manson)
     * _Project Hail Mary_ (Andy Weir)
     * _The Doctors Who Give No Medicine_ (Dr Jeffrey Hannah DC)
     * _Break the Mold_ (Dr Jill Crista)
@@ -81,7 +82,7 @@ This is just a list of books I've read (starting late 2016), for my own record.
     * _Mistress of the Empire_ (Raymond Feist & Janny Wurts)
     * _Doctor You_ (Jeremy Howick)
     * _Cracking Mathematics_ (Colin Beveridge)
-    * _The Subtle Art of Not Giving a F*ck_ (Mark Manson)
+    * _The Subtle Art of Not Giving a Fuck_ (Mark Manson)
     * _LaTeX Cookbook_ (Stefan Kottwitz)
 * 2017
     * _The Fast Diet_ (Michael Mosley and Mimi Spencer)
