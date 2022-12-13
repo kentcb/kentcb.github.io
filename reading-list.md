@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2022
+    * _A Life Less Stressed_ (Dr Ron Ehrlich)
     * _Nineteen Eighty-Four_ (George Orwell)
     * _SD Protocol_ (Dr Wayne Todd)
     * _The Art of Rest_ (Claudia Hammond)
