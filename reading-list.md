@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2023
+    * _A Wizard of Earthsea_ (Ursula K. Le Guin)
     * _Turtles All the Way Down - Vaccine Science and Myth_ (anonymous authors)
 * 2022
     * _A Life Less Stressed_ (Dr Ron Ehrlich)
