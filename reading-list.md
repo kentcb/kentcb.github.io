@@ -6,6 +6,8 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2023
+    * _Enough_ (Jon Douglas)
+    * _The Body Keeps the Score_ (Bessel van der Kolk)
     * _Brickman's Book of Better Builds_ (Ryan McNaught)
     * _When the Body Says No: The Cost of Hidden Stress_ (Gabor Maté)
     * _A Wizard of Earthsea_ (Ursula K. Le Guin)
