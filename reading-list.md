@@ -6,6 +6,8 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2023
+    * _Yoga and the Quest for True Self_ (Stephen Cope)
+    * _Toxic_ (Dr. Neil Nathan)
     * _Smart Until it's Dumb_ (Emmanuel Maggiori, Phd)
     * _Accessing the Healing Power of the Vagus Nerve_ (Stanley Rosenberg)
     * _Enough_ (Jon Douglas)
