@@ -5,6 +5,8 @@ sidebar: true
 ---
 This is just a list of books I've read (starting late 2016), for my own record.
 
+* 2024
+    * _Essential Oils to Boost the Brain & Heal the Body_ (Jodi Cohen)
 * 2023
     * _Earthing_ (Clinton Ober, Stephen T. Sinatra, MD, Martin Zucker)
     * _Yoga and the Quest for True Self_ (Stephen Cope)
