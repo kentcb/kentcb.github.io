@@ -1,5 +1,5 @@
 /* --------------------------
-:: Template Name: Colorlib App - App Landing Page 
+:: Template Name: Colorlib App - App Landing Page
 :: Template Author: Colorlib
 :: Template Author URI: https://colorlib.com/
 :: Description: Colorlib is a One Page based App Landing Template. It's very clean, creative & beautiful. It's super     responsive & ultra light.
@@ -8,22 +8,6 @@
 :: Created: 11/03/2017
 -------------------------- */
 
-/* --- [Master Stylesheet] ----
-:: 1.0 Base CSS Start
-:: 2.0 Header Area CSS
-:: 3.0 Wellcome Area CSS
-:: 4.0 Special Area CSS
-:: 5.0 Features Area CSS
-:: 6.0 Video Area CSS
-:: 7.0 Cool Facts Area CSS
-:: 8.0 Screenshots Area CSS
-:: 9.0 Pricing Plan Area CSS
-:: 10.0 Testimonials Area CSS
-:: 11.0 CTA Area CSS Start
-:: 12.0 Team Area CSS Start
-:: 13.0 Contact Area CSS Start
-:: 14.0 Footer Area CSS Start
--------------------------- */
 
 @import url('https://fonts.googleapis.com/css?family=Cabin:400,500,700|Montserrat:400,500,700');
 @import 'css/bootstrap.min.css';
@@ -317,6 +301,23 @@ p {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
     }
+}
+
+/* --------------------------
+:: ADDED BY ME: Subscribe Area CSS
+-------------------------- */
+
+.subscribe_area {
+    display: flex;
+    justify-content: center;
+    background-color: #799fff;
+}
+
+.formkit-form {
+    /*
+    Override the external styling provided by ConvertKit because they don't allow adjusting this in their UI.
+    */
+    border: 0px !important;
 }
 
 /* --------------------------
@@ -1297,5 +1298,6 @@ p {
 }
 
 .copyright-text > p {
+    margin-top: 60px;
     margin-bottom: 0;
 }
