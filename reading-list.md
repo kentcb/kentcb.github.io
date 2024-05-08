@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2024
+    * _Band of Brothers_ (Stephen E. Ambrose)
     * _Dark Emu_ (Bruce Pascoe)
     * _Essential Oils to Boost the Brain & Heal the Body_ (Jodi Cohen)
 * 2023
