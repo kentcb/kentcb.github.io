@@ -6,7 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2024
-    * _The Well-Lived Life (Dr Gladys McGarey)
+    * _The Well-Lived Life_ (Dr Gladys McGarey)
     * _Dirty Genes_ (Dr Ben Lynch)
     * _Energetic Diagnosis_ (Neil Nathan, MD)
     * _Band of Brothers_ (Stephen E. Ambrose)
