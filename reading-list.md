@@ -5,6 +5,8 @@ sidebar: true
 ---
 This is just a list of books I've read (starting late 2016), for my own record.
 
+* 2025
+    * _Into the Magic Shop_ (Dr James R Doty)
 * 2024
     * _The Well-Lived Life_ (Dr Gladys McGarey)
     * _Dirty Genes_ (Dr Ben Lynch)
