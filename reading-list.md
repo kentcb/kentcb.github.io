@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2025
+	* _A Hunter-Gatherer's Guide to the 21st Century_ (Heather Heying and Bret Weinstein)
     * _Into the Magic Shop_ (Dr James R Doty)
 * 2024
     * _The Well-Lived Life_ (Dr Gladys McGarey)
