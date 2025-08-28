@@ -6,6 +6,7 @@ sidebar: true
 This is just a list of books I've read (starting late 2016), for my own record.
 
 * 2025
+    * _Heal Yourself with Traditional Chinese Medicine_ (Dr Lily Choi, Bess Koutroumanis)
     * _Surrounded by Idiots_ (Thomas Erikson)
     * _A Hunter-Gatherer's Guide to the 21st Century_ (Heather Heying and Bret Weinstein)
     * _Into the Magic Shop_ (Dr James R Doty)
