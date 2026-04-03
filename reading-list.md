@@ -5,6 +5,8 @@ sidebar: true
 ---
 This is just a list of books I've read (starting late 2016), for my own record.
 
+* 2026
+    * _Healing Lyme Disease_ (Stephen Harrod Buhner)
 * 2025
     * _The Art of Elixir_ (Jeff Hajewski)
     * _Heal Yourself with Traditional Chinese Medicine_ (Dr Lily Choi, Bess Koutroumanis)
